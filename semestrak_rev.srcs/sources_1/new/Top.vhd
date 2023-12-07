@@ -141,6 +141,7 @@ end component;
     port (
       clk : in std_logic;
       input_rdy : in std_logic;
+      rst : in std_logic;
       instruction : in std_logic_vector (7 downto 0);
       flags : in std_logic_vector (3 downto 0);
       step : in std_logic_vector (2 downto 0);
@@ -356,6 +357,7 @@ begin
   port map (
     clk => clk_n,
     input_rdy => inpt_rdy_s,
+    rst => Rst,
     instruction => instruction_s,
     flags => FLAGS_s,
     step => STEP_s,

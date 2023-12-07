@@ -39,7 +39,7 @@ entity divider_custom is
     CNT_W : integer := 8
 );
     Port ( clk : in STD_LOGIC;
-           rst : in STD_LOGIC ;
+           rst : in STD_LOGIC := '0';
            clk_out : out STD_LOGIC);
 end divider_custom;
 

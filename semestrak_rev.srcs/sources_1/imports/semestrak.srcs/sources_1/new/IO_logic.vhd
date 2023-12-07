@@ -48,15 +48,15 @@ architecture Behavioral of IO_logic is
     shared variable result_val : STD_LOGIC_VECTOR (7 downto 0) := (others=>'0');
     
 begin
-process (clk, reg_pick)
+process (clk, reg_pick,reset)
 begin
-    if rising_edge(clk) then
-        if reset = '1' then
-            enabled_pr := (others=>'0');
-            write_read := (others=>'0');
-            output_val := (others=>'0');
-            result_val := (others=>'0');
-        elsif in_en = '1' then
+    if reset = '1' then
+        enabled_pr := (others=>'0');
+        write_read := (others=>'0');
+        output_val := (others=>'0');
+        result_val := (others=>'0');
+    elsif rising_edge(clk) then
+        if in_en = '1' then
             case reg_pick is
                 when "00" => output_val := Data_in;
                 when "01" => enabled_pr := Data_in;

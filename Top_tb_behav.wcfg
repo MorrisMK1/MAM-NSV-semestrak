@@ -11,12 +11,12 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="45.189020375 ms"></ZoomStartTime>
-      <ZoomEndTime time="77.089020376 ms"></ZoomEndTime>
-      <Cursor1Time time="71.772353709 ms"></Cursor1Time>
+      <ZoomStartTime time="21.162390546 ms"></ZoomStartTime>
+      <ZoomEndTime time="55.562390547 ms"></ZoomEndTime>
+      <Cursor1Time time="36.250000000 ms"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="118"></NameColumnWidth>
+      <NameColumnWidth column_width="159"></NameColumnWidth>
       <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="22" />
@@ -25,8 +25,9 @@
       <obj_property name="ObjectShortName">clk_100MHz</obj_property>
    </wvobject>
    <wvobject fp_name="/Top_tb/IO_ports" type="array">
-      <obj_property name="ElementShortName">IO_ports[5:0]</obj_property>
-      <obj_property name="ObjectShortName">IO_ports[5:0]</obj_property>
+      <obj_property name="ElementShortName">IO_ports[7:0]</obj_property>
+      <obj_property name="ObjectShortName">IO_ports[7:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/Top_tb/CA" type="logic">
       <obj_property name="ElementShortName">CA</obj_property>
@@ -175,6 +176,7 @@
    <wvobject fp_name="group149" type="group">
       <obj_property name="label">kontrol</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/Kontroler_0/clk" type="logic">
          <obj_property name="ElementShortName">clk</obj_property>
          <obj_property name="ObjectShortName">clk</obj_property>
@@ -190,6 +192,31 @@
       <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/Kontroler_0/flags" type="array">
          <obj_property name="ElementShortName">flags[3:0]</obj_property>
          <obj_property name="ObjectShortName">flags[3:0]</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/Kontroler_0/flags[3]" type="logic">
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="ElementShortName">[3]</obj_property>
+            <obj_property name="ObjectShortName">[3]</obj_property>
+            <obj_property name="label">neg</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/Kontroler_0/flags[2]" type="logic">
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="ElementShortName">[2]</obj_property>
+            <obj_property name="ObjectShortName">[2]</obj_property>
+            <obj_property name="label">zer</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/Kontroler_0/flags[1]" type="logic">
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="ElementShortName">[1]</obj_property>
+            <obj_property name="ObjectShortName">[1]</obj_property>
+            <obj_property name="label">car</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/Kontroler_0/flags[0]" type="logic">
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="ElementShortName">[0]</obj_property>
+            <obj_property name="ObjectShortName">[0]</obj_property>
+            <obj_property name="label">ovr</obj_property>
+         </wvobject>
       </wvobject>
       <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/Kontroler_0/step" type="array">
          <obj_property name="ElementShortName">step[2:0]</obj_property>
@@ -359,6 +386,7 @@
    <wvobject fp_name="group265" type="group">
       <obj_property name="label">ALU</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/ALU_inst/clk" type="logic">
          <obj_property name="ElementShortName">clk</obj_property>
          <obj_property name="ObjectShortName">clk</obj_property>

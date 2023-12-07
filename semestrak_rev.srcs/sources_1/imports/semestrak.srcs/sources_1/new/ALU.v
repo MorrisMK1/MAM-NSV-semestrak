@@ -41,8 +41,10 @@ module ALU#(
     assign zer = ~(|c);
     assign neg = c[INPUT_WIDTH-1];
     assign car = (control < 2) ? ((a + b + carry) >= 2**INPUT_WIDTH) : 0;
-    assign ovr = (~a[INPUT_WIDTH-1] & ~b[INPUT_WIDTH-1] & c[INPUT_WIDTH-1])|
-                 (a[INPUT_WIDTH-1] & b[INPUT_WIDTH-1] & ~c[INPUT_WIDTH-1]);
+    assign ovr = (control < 6) ? (~a[INPUT_WIDTH-1] & ~b[INPUT_WIDTH-1] & c[INPUT_WIDTH-1])|
+                 (a[INPUT_WIDTH-1] & b[INPUT_WIDTH-1] & ~c[INPUT_WIDTH-1]): 
+                 (control == 6) ? a[7]:
+                 a[0];
     assign a = A;
     assign b =  B ^ {INPUT_WIDTH{(control[0] & (! control[1]) & (! control[2]))}}; //(control == 1) ? ~B : B;
     assign c =  (control < 2) ? a + b + carry:

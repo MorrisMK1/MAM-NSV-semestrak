@@ -77,7 +77,7 @@ begin
     BTD => BTD,
     BTU => BTU,
     SWs => SWs,
-    IO_ports => IO_ports,
+    JA => IO_ports,
     CA => CA,
     CB => CB,
     CC => CC,

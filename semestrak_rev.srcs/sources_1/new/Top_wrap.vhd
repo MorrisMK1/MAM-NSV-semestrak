@@ -111,7 +111,6 @@ generic (
 );
 port (
   clk : in STD_LOGIC;
-  rst : in STD_LOGIC;
   clk_out : out STD_LOGIC
 );
 end component;
@@ -192,7 +191,6 @@ main_clk : clk_wiz_10MHz
   )
   port map (
     clk => clk_10MHz,
-    rst => rst,
     clk_out => clk_7seg
   );
 
@@ -203,7 +201,6 @@ main_clk : clk_wiz_10MHz
   )
   port map (
     clk => clk_10MHz,
-    rst => rst,
     clk_out => clk_2Hz
   );
   
@@ -214,7 +211,6 @@ main_clk : clk_wiz_10MHz
   )
   port map (
     clk => clk_10MHz,
-    rst => rst,
     clk_out => clk_10Hz
   );
   
@@ -225,7 +221,6 @@ main_clk : clk_wiz_10MHz
   )
   port map (
     clk => clk_10MHz,
-    rst => rst,
     clk_out => clk_100Hz
   );
 
