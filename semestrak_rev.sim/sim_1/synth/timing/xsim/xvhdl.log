@@ -1,0 +1,5 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sim_1/new/top_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Top_tb'
+ERROR: [VRFC 10-2987] 'top_wrap' is not compiled in library 'xil_defaultlib' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sim_1/new/top_tb.vhd:71]
+ERROR: [VRFC 10-9458] unit 'bench' is ignored due to previous errors [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sim_1/new/top_tb.vhd:42]
+INFO: [VRFC 10-8704] VHDL file 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sim_1/new/top_tb.vhd' is ignored due to errors

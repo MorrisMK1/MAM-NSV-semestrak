@@ -1,0 +1,58 @@
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/apps/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_6 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot Top_tb_behav xil_defaultlib.Top_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'out_en' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/Counter.v:49]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package vl.vl_types
+Compiling module xil_defaultlib.glbl
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(BANDWIDTH="HIGH",CLKF...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_10MHz_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_10MHz
+Compiling architecture behavioral of entity xil_defaultlib.divider_custom [\divider_custom(divider=10000,cn...]
+Compiling architecture behavioral of entity xil_defaultlib.divider_custom [\divider_custom(divider=5000000,...]
+Compiling architecture behavioral of entity xil_defaultlib.divider_custom [\divider_custom(divider=1000000,...]
+Compiling architecture behavioral of entity xil_defaultlib.divider_custom [\divider_custom(divider=100000,c...]
+Compiling module xil_defaultlib.mux_var_8(INPUT_WIDTH=8)
+Compiling architecture behavioral of entity xil_defaultlib.decode_3_8 [decode_3_8_default]
+Compiling module xil_defaultlib.Kontroler
+Compiling module xil_defaultlib.Register_c(INPUT_COUNT=3)
+Compiling module xil_defaultlib.counter(INPUT_COUNT=3)
+Compiling module xil_defaultlib.Register_c(INPUT_COUNT=8)
+Compiling module blk_mem_gen_v8_4_6.blk_mem_gen_v8_4_6_output_stage(...
+Compiling module blk_mem_gen_v8_4_6.blk_mem_gen_v8_4_6_output_stage(...
+Compiling module blk_mem_gen_v8_4_6.blk_mem_gen_v8_4_6_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_6.blk_mem_gen_v8_4_6_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_6.blk_mem_gen_v8_4_6(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_RAM
+Compiling module blk_mem_gen_v8_4_6.blk_mem_gen_v8_4_6_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_6.blk_mem_gen_v8_4_6(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_ROM
+Compiling module xil_defaultlib.ALU(INPUT_WIDTH=8)
+Compiling module xil_defaultlib.Register_c
+Compiling module xil_defaultlib.counter(INPUT_COUNT=8)
+Compiling module xil_defaultlib.LIFO(DATA_WIDTH=8,POINTER_WIDTH=...
+Compiling architecture behavioral of entity xil_defaultlib.input_logic [input_logic_default]
+Compiling architecture behavioral of entity xil_defaultlib.IO_logic [io_logic_default]
+Compiling architecture behavioral of entity xil_defaultlib.Top [top_default]
+Compiling architecture behavioral of entity xil_defaultlib.number_to_digits [number_to_digits_default]
+Compiling architecture behavioral of entity xil_defaultlib.decode_3_8_n [decode_3_8_n_default]
+Compiling architecture behavioral of entity xil_defaultlib.Decode_7seg [decode_7seg_default]
+Compiling architecture behavioral of entity xil_defaultlib.seg7_sys [seg7_sys_default]
+Compiling architecture behavioral of entity xil_defaultlib.Top_wrap [top_wrap_default]
+Compiling architecture bench of entity xil_defaultlib.top_tb
+Built simulation snapshot Top_tb_behav

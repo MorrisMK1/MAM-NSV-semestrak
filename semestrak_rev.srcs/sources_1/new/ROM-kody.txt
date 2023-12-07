@@ -1,0 +1,8 @@
+memory_initialization_vector=0A 0A 07 80 0B 14 0B 15 0B 05 11 02 80 03 04 05 0B 0D 80 03 04 05 11; pocitani nahoru nebo dolu
+
+memory_initialization_vector=01 0B 14 0C 0C 06 14 04 19 11 15 80 0B 02 11 05 03 01; Bootloader
+
+memory_initialization_vector=01 XX 14 1B 06 14 1A 10 XX 03 05 06; IO test
+memory_initialization_vector=01 0C 14 1B 06 14 1A 10 0C 03 05 06 FF; IO test
+
+kod na pocitani nahoru: 01 88 02 89 03 04 05 82 01 02

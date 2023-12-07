@@ -1,0 +1,286 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Tue Nov  7 11:40:41 2023
+# Process ID: 12088
+# Current directory: D:/projekty/CVUT/Vivado2023.1/semestrak_rev
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5736 D:\projekty\CVUT\Vivado2023.1\semestrak_rev\semestrak_rev.xpr
+# Log file: D:/projekty/CVUT/Vivado2023.1/semestrak_rev/vivado.log
+# Journal file: D:/projekty/CVUT/Vivado2023.1/semestrak_rev\vivado.jou
+# Running On: LAPTOP-S2JGJMUA, OS: Windows, CPU Frequency: 2808 MHz, CPU Physical cores: 4, Host memory: 17066 MB
+#-----------------------------------------------------------
+start_gui
+open_project D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.xpr
+launch_simulation
+open_wave_config D:/projekty/CVUT/Vivado2023.1/semestrak_rev/Top_tb_behav.wcfg
+source Top_tb.tcl
+run 500 us
+run 500 us
+current_wave_config {Top_tb_behav.wcfg}
+add_wave {{/Top_tb/Top_inst/ROM}} 
+relaunch_sim
+save_wave_config {D:/projekty/CVUT/Vivado2023.1/semestrak_rev/Top_tb_behav.wcfg}
+run 500 us
+run 500 us
+current_wave_config {Top_tb_behav.wcfg}
+add_wave {{/Top_tb/Top_inst/clocking_plex_main/clk}} {{/Top_tb/Top_inst/clocking_plex_main/one_step}} {{/Top_tb/Top_inst/clocking_plex_main/pick}} {{/Top_tb/Top_inst/clocking_plex_main/step_pulse}} {{/Top_tb/Top_inst/clocking_plex_main/clk_out}} {{/Top_tb/Top_inst/clocking_plex_main/counter}} {{/Top_tb/Top_inst/clocking_plex_main/check}} {{/Top_tb/Top_inst/clocking_plex_main/pulse}} 
+save_wave_config {D:/projekty/CVUT/Vivado2023.1/semestrak_rev/Top_tb_behav.wcfg}
+run 500 us
+run 500 us
+relaunch_sim
+run 500 us
+run 500 us
+run 500 us
+run 500 us
+run 500 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+relaunch_sim
+run 500 us
+run 500 us
+relaunch_sim
+run 500 us
+run 500 us
+run 500 us
+run 500 us
+current_wave_config {Top_tb_behav.wcfg}
+add_wave {{/Top_tb/Top_inst/Register_inst}} 
+relaunch_sim
+run 500 us
+run 500 us
+run 500 us
+run 500 us
+run 500 us
+run 500 us
+run 500 us
+run 500 us
+run 500 us
+add_force {/Top_tb/Rst} -radix hex {1 0ns}
+run 500 us
+add_force {/Top_tb/Rst} -radix hex {0 0ns}
+run 500 us
+run 500 us
+run 500 us
+run 500 us
+relaunch_sim
+run 500 us
+run 500 us
+run 500 us
+run 500 us
+run 500 us
+current_wave_config {Top_tb_behav.wcfg}
+add_wave {{/Top_tb/Top_inst/mux_source_en}} 
+save_wave_config {D:/projekty/CVUT/Vivado2023.1/semestrak_rev/Top_tb_behav.wcfg}
+relaunch_sim
+run 2000 us
+relaunch_sim
+run 2000 us
+run 2000 us
+run 10 ms
+current_wave_config {Top_tb_behav.wcfg}
+add_wave {{/Top_tb/Top_inst/Register_A}} 
+relaunch_sim
+run 20 ms
+run all
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+close_sim
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+open_run impl_1
+launch_simulation
+open_wave_config D:/projekty/CVUT/Vivado2023.1/semestrak_rev/Top_tb_behav.wcfg
+source Top_tb.tcl
+relaunch_sim
+run 50 ms
+relaunch_sim
+relaunch_sim
+run 50 ms
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+refresh_design
+close_design
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top LIFO [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode DisplayOnly [current_project]
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+refresh_design
+synth_design -top LIFO -part xc7a100tcsg324-1 -lint 
+refresh_design
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top Top [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode DisplayOnly [current_project]
+close_design
+reset_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+open_run impl_1
+show_objects -name find_1 [get_cells -hierarchical "*logic*" ]
+close_design
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+close_design
+open_run impl_1
+close_design
+open_run synth_1 -name synth_1
+close_design
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top input_logic [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode DisplayOnly [current_project]
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top input_logic [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode DisplayOnly [current_project]
+launch_simulation
+close_sim
+launch_simulation
+open_wave_config D:/projekty/CVUT/Vivado2023.1/semestrak_rev/Top_tb_behav.wcfg
+source input_logic.tcl
+add_force {/input_logic/clk} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
+add_force {/input_logic/enable} -radix hex {0 0ns}
+add_force {/input_logic/confirm} -radix hex {1 0ns} {0 500000ps} -repeat_every 1000000ps
+add_force {/input_logic/inputs} -radix hex {1 0ns}
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+add_force {/input_logic/enable} -radix hex {1 0ns}
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+relaunch_sim
+add_force {/input_logic/clk} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
+add_force {/input_logic/enable} -radix hex {0 0ns}
+add_force {/input_logic/confirm} -radix hex {1 0ns} {0 150000ps} -repeat_every 300000ps
+add_force {/input_logic/inputs} -radix hex {2 0ns}
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+add_force {/input_logic/enable} -radix hex {1 0ns}
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+add_force {/input_logic/enable} -radix hex {0 0ns}
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+relaunch_sim
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top Top [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode DisplayOnly [current_project]
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top ALU_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode DisplayOnly [current_project]
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top Top_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode DisplayOnly [current_project]
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+close_sim
+close_design
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top input_logic [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode DisplayOnly [current_project]
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+refresh_design
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top Top [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode DisplayOnly [current_project]
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+close_design
+open_run synth_1 -name synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+close_design
+open_run synth_1 -name synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+open_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+refresh_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+refresh_design
