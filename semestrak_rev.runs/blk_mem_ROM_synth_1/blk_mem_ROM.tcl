@@ -70,12 +70,8 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "blk_mem_ROM_synth_1" START { ROLLUP_AUTO }
-set_param checkpoint.writeSynthRtdsInDcp 1
 set_param chipscope.maxJobs 2
-set_param synth.incrementalSynthesisCache D:/projekty/CVUT/Vivado2023.1/semestrak_rev/.Xil/Vivado-2056-LAPTOP-S2JGJMUA/incrSyn
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }

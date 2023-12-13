@@ -14,7 +14,7 @@ ECHO is off.
     ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source Top_wrap.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 430.504 ; gain = 161.926
+create_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 430.297 ; gain = 160.305
 Command: read_checkpoint -auto_incremental -incremental D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/utils_1/imports/synth_1/Top.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/utils_1/imports/synth_1/Top.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -27,13 +27,94 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 18136
+INFO: [Synth 8-7075] Helper process launched with PID 9044
 INFO: [Synth 8-11241] undeclared symbol 'c0', assumed default net type 'wire' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/FullAdder.v:30]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1277.438 ; gain = 411.547
+Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1278.324 ; gain = 412.016
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'Top_wrap' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:60]
-INFO: [Synth 8-3491] module 'clk_wiz_10MHz' declared at 'd:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/clk_wiz_10MHz/clk_wiz_10MHz.v:68' bound to instance 'main_clk' of component 'clk_wiz_10MHz' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:181]
+	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
+	Parameter SAMPLES bound to: 64 - type: integer 
+	Parameter LENGTH_US bound to: 500 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'BTC_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:235]
+INFO: [Synth 8-638] synthesizing module 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:48]
+	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
+	Parameter SAMPLES bound to: 64 - type: integer 
+	Parameter LENGTH_US bound to: 500 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'debounce' (0#1) [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:48]
+	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
+	Parameter SAMPLES bound to: 64 - type: integer 
+	Parameter LENGTH_US bound to: 500 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'BTD_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:249]
+	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
+	Parameter SAMPLES bound to: 64 - type: integer 
+	Parameter LENGTH_US bound to: 500 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'BTU_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:263]
+	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
+	Parameter SAMPLES bound to: 64 - type: integer 
+	Parameter LENGTH_US bound to: 500 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
+	Parameter SAMPLES bound to: 64 - type: integer 
+	Parameter LENGTH_US bound to: 500 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
+	Parameter SAMPLES bound to: 64 - type: integer 
+	Parameter LENGTH_US bound to: 500 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
+	Parameter SAMPLES bound to: 64 - type: integer 
+	Parameter LENGTH_US bound to: 500 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
+	Parameter SAMPLES bound to: 64 - type: integer 
+	Parameter LENGTH_US bound to: 500 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
+	Parameter SAMPLES bound to: 64 - type: integer 
+	Parameter LENGTH_US bound to: 500 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
+	Parameter SAMPLES bound to: 64 - type: integer 
+	Parameter LENGTH_US bound to: 500 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
+	Parameter SAMPLES bound to: 64 - type: integer 
+	Parameter LENGTH_US bound to: 500 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
+	Parameter SAMPLES bound to: 64 - type: integer 
+	Parameter LENGTH_US bound to: 500 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
+	Parameter SAMPLES bound to: 64 - type: integer 
+	Parameter LENGTH_US bound to: 500 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
+	Parameter SAMPLES bound to: 64 - type: integer 
+	Parameter LENGTH_US bound to: 500 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
+	Parameter SAMPLES bound to: 64 - type: integer 
+	Parameter LENGTH_US bound to: 500 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
+	Parameter SAMPLES bound to: 64 - type: integer 
+	Parameter LENGTH_US bound to: 500 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
+	Parameter SAMPLES bound to: 64 - type: integer 
+	Parameter LENGTH_US bound to: 500 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
+	Parameter SAMPLES bound to: 64 - type: integer 
+	Parameter LENGTH_US bound to: 500 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
+	Parameter SAMPLES bound to: 64 - type: integer 
+	Parameter LENGTH_US bound to: 500 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+INFO: [Synth 8-3491] module 'clk_wiz_10MHz' declared at 'd:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/clk_wiz_10MHz/clk_wiz_10MHz.v:68' bound to instance 'main_clk' of component 'clk_wiz_10MHz' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:291]
 INFO: [Synth 8-6157] synthesizing module 'clk_wiz_10MHz' [d:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/clk_wiz_10MHz/clk_wiz_10MHz.v:68]
 INFO: [Synth 8-6157] synthesizing module 'clk_wiz_10MHz_clk_wiz' [d:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/clk_wiz_10MHz/clk_wiz_10MHz_clk_wiz.v:68]
 INFO: [Synth 8-6157] synthesizing module 'IBUF' [D:/apps/Xilinx/Vivado/2023.1/scripts/rt/data/unisim_comp.v:71768]
@@ -57,340 +138,78 @@ INFO: [Synth 8-6157] synthesizing module 'BUFG' [D:/apps/Xilinx/Vivado/2023.1/sc
 INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [D:/apps/Xilinx/Vivado/2023.1/scripts/rt/data/unisim_comp.v:1519]
 INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_10MHz_clk_wiz' (0#1) [d:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/clk_wiz_10MHz/clk_wiz_10MHz_clk_wiz.v:68]
 INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_10MHz' (0#1) [d:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/clk_wiz_10MHz/clk_wiz_10MHz.v:68]
-WARNING: [Synth 8-5640] Port 'rst' is missing in component declaration [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:107]
+WARNING: [Synth 8-5640] Port 'rst' is missing in component declaration [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:109]
 	Parameter DIVIDER bound to: 10000 - type: integer 
 	Parameter CNT_W bound to: 14 - type: integer 
-INFO: [Synth 8-3491] module 'divider_custom' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:36' bound to instance 'divider_7seg_disp_clk' of component 'divider_custom' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:187]
+INFO: [Synth 8-3491] module 'divider_custom' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:36' bound to instance 'divider_7seg_disp_clk' of component 'divider_custom' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:297]
 INFO: [Synth 8-638] synthesizing module 'divider_custom' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:46]
 	Parameter DIVIDER bound to: 10000 - type: integer 
 	Parameter CNT_W bound to: 14 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'divider_custom' (0#1) [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:46]
-WARNING: [Synth 8-5640] Port 'rst' is missing in component declaration [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:107]
+WARNING: [Synth 8-5640] Port 'rst' is missing in component declaration [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:109]
 	Parameter DIVIDER bound to: 5000000 - type: integer 
 	Parameter CNT_W bound to: 23 - type: integer 
-INFO: [Synth 8-3491] module 'divider_custom' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:36' bound to instance 'divider_2Hz_clk' of component 'divider_custom' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:197]
+INFO: [Synth 8-3491] module 'divider_custom' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:36' bound to instance 'divider_2Hz_clk' of component 'divider_custom' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:307]
 INFO: [Synth 8-638] synthesizing module 'divider_custom__parameterized1' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:46]
 	Parameter DIVIDER bound to: 5000000 - type: integer 
 	Parameter CNT_W bound to: 23 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'divider_custom__parameterized1' (0#1) [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:46]
-WARNING: [Synth 8-5640] Port 'rst' is missing in component declaration [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:107]
+WARNING: [Synth 8-5640] Port 'rst' is missing in component declaration [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:109]
 	Parameter DIVIDER bound to: 1000000 - type: integer 
 	Parameter CNT_W bound to: 20 - type: integer 
-INFO: [Synth 8-3491] module 'divider_custom' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:36' bound to instance 'divider_10Hz_clk' of component 'divider_custom' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:207]
+INFO: [Synth 8-3491] module 'divider_custom' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:36' bound to instance 'divider_10Hz_clk' of component 'divider_custom' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:317]
 INFO: [Synth 8-638] synthesizing module 'divider_custom__parameterized3' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:46]
 	Parameter DIVIDER bound to: 1000000 - type: integer 
 	Parameter CNT_W bound to: 20 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'divider_custom__parameterized3' (0#1) [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:46]
-WARNING: [Synth 8-5640] Port 'rst' is missing in component declaration [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:107]
+WARNING: [Synth 8-5640] Port 'rst' is missing in component declaration [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:109]
 	Parameter DIVIDER bound to: 100000 - type: integer 
 	Parameter CNT_W bound to: 17 - type: integer 
-INFO: [Synth 8-3491] module 'divider_custom' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:36' bound to instance 'divider_100Hz_clk' of component 'divider_custom' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:217]
+INFO: [Synth 8-3491] module 'divider_custom' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:36' bound to instance 'divider_100Hz_clk' of component 'divider_custom' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:327]
 INFO: [Synth 8-638] synthesizing module 'divider_custom__parameterized5' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:46]
 	Parameter DIVIDER bound to: 100000 - type: integer 
 	Parameter CNT_W bound to: 17 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'divider_custom__parameterized5' (0#1) [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:46]
-INFO: [Synth 8-3491] module 'Top' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top.vhd:35' bound to instance 'Top_inst' of component 'Top' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:242]
-INFO: [Synth 8-638] synthesizing module 'Top' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top.vhd:54]
-	Parameter INPUT_WIDTH bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'mux_var_8' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/mux_var_8.v:23' bound to instance 'mux_source_en' of component 'mux_var_8' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top.vhd:323]
-INFO: [Synth 8-6157] synthesizing module 'mux_var_8' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/mux_var_8.v:23]
-	Parameter INPUT_WIDTH bound to: 8 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'mux_var_8' (0#1) [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/mux_var_8.v:23]
-INFO: [Synth 8-3491] module 'decode_3_8' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/decode_3_8.vhd:36' bound to instance 'decode_target_en' of component 'decode_3_8' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top.vhd:340]
-INFO: [Synth 8-638] synthesizing module 'decode_3_8' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/decode_3_8.vhd:42]
-INFO: [Synth 8-256] done synthesizing module 'decode_3_8' (0#1) [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/decode_3_8.vhd:42]
-INFO: [Synth 8-3491] module 'Kontroler' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/Kontroler.v:22' bound to instance 'Kontroler_0' of component 'Kontroler' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top.vhd:356]
-INFO: [Synth 8-6157] synthesizing module 'Kontroler' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/Kontroler.v:22]
-INFO: [Synth 8-6155] done synthesizing module 'Kontroler' (0#1) [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/Kontroler.v:22]
-	Parameter INPUT_COUNT bound to: 3 - type: integer 
-INFO: [Synth 8-3491] module 'counter' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/Counter.v:23' bound to instance 'counter_step' of component 'counter' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top.vhd:379]
-INFO: [Synth 8-6157] synthesizing module 'counter' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/Counter.v:23]
-	Parameter INPUT_COUNT bound to: 3 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'Register_c' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/Register.v:23]
-	Parameter INPUT_COUNT bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'Register_c' (0#1) [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/Register.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'counter' (0#1) [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/Counter.v:23]
-	Parameter INPUT_COUNT bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'Register_c' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/Register.v:23' bound to instance 'Register_inst' of component 'Register_c' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top.vhd:394]
-INFO: [Synth 8-6157] synthesizing module 'Register_c__parameterized1' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/Register.v:23]
-	Parameter INPUT_COUNT bound to: 8 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'Register_c__parameterized1' (0#1) [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/Register.v:23]
-	Parameter INPUT_COUNT bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'Register_c' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/Register.v:23' bound to instance 'Register_addr' of component 'Register_c' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top.vhd:407]
-INFO: [Synth 8-3491] module 'blk_mem_RAM' declared at 'd:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/blk_mem_RAM/synth/blk_mem_RAM.vhd:59' bound to instance 'RAM' of component 'blk_mem_RAM' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top.vhd:428]
-INFO: [Synth 8-638] synthesizing module 'blk_mem_RAM' [d:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/blk_mem_RAM/synth/blk_mem_RAM.vhd:75]
-	Parameter C_FAMILY bound to: artix7 - type: string 
-	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
-	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
-	Parameter C_INTERFACE_TYPE bound to: 0 - type: integer 
-	Parameter C_AXI_TYPE bound to: 1 - type: integer 
-	Parameter C_AXI_SLAVE_TYPE bound to: 0 - type: integer 
-	Parameter C_USE_BRAM_BLOCK bound to: 0 - type: integer 
-	Parameter C_ENABLE_32BIT_ADDRESS bound to: 0 - type: integer 
-	Parameter C_CTRL_ECC_ALGO bound to: NONE - type: string 
-	Parameter C_HAS_AXI_ID bound to: 0 - type: integer 
-	Parameter C_AXI_ID_WIDTH bound to: 4 - type: integer 
-	Parameter C_MEM_TYPE bound to: 2 - type: integer 
-	Parameter C_BYTE_SIZE bound to: 9 - type: integer 
-	Parameter C_ALGORITHM bound to: 1 - type: integer 
-	Parameter C_PRIM_TYPE bound to: 1 - type: integer 
-	Parameter C_LOAD_INIT_FILE bound to: 0 - type: integer 
-	Parameter C_INIT_FILE_NAME bound to: no_coe_file_loaded - type: string 
-	Parameter C_INIT_FILE bound to: blk_mem_RAM.mem - type: string 
-	Parameter C_USE_DEFAULT_DATA bound to: 1 - type: integer 
-	Parameter C_DEFAULT_DATA bound to: 0 - type: string 
-	Parameter C_HAS_RSTA bound to: 0 - type: integer 
-	Parameter C_RST_PRIORITY_A bound to: CE - type: string 
-	Parameter C_RSTRAM_A bound to: 0 - type: integer 
-	Parameter C_INITA_VAL bound to: 0 - type: string 
-	Parameter C_HAS_ENA bound to: 1 - type: integer 
-	Parameter C_HAS_REGCEA bound to: 0 - type: integer 
-	Parameter C_USE_BYTE_WEA bound to: 0 - type: integer 
-	Parameter C_WEA_WIDTH bound to: 1 - type: integer 
-	Parameter C_WRITE_MODE_A bound to: WRITE_FIRST - type: string 
-	Parameter C_WRITE_WIDTH_A bound to: 8 - type: integer 
-	Parameter C_READ_WIDTH_A bound to: 8 - type: integer 
-	Parameter C_WRITE_DEPTH_A bound to: 128 - type: integer 
-	Parameter C_READ_DEPTH_A bound to: 128 - type: integer 
-	Parameter C_ADDRA_WIDTH bound to: 7 - type: integer 
-	Parameter C_HAS_RSTB bound to: 0 - type: integer 
-	Parameter C_RST_PRIORITY_B bound to: CE - type: string 
-	Parameter C_RSTRAM_B bound to: 0 - type: integer 
-	Parameter C_INITB_VAL bound to: 0 - type: string 
-	Parameter C_HAS_ENB bound to: 0 - type: integer 
-	Parameter C_HAS_REGCEB bound to: 0 - type: integer 
-	Parameter C_USE_BYTE_WEB bound to: 0 - type: integer 
-	Parameter C_WEB_WIDTH bound to: 1 - type: integer 
-	Parameter C_WRITE_MODE_B bound to: WRITE_FIRST - type: string 
-	Parameter C_WRITE_WIDTH_B bound to: 8 - type: integer 
-	Parameter C_READ_WIDTH_B bound to: 8 - type: integer 
-	Parameter C_WRITE_DEPTH_B bound to: 128 - type: integer 
-	Parameter C_READ_DEPTH_B bound to: 128 - type: integer 
-	Parameter C_ADDRB_WIDTH bound to: 7 - type: integer 
-	Parameter C_HAS_MEM_OUTPUT_REGS_A bound to: 0 - type: integer 
-	Parameter C_HAS_MEM_OUTPUT_REGS_B bound to: 0 - type: integer 
-	Parameter C_HAS_MUX_OUTPUT_REGS_A bound to: 0 - type: integer 
-	Parameter C_HAS_MUX_OUTPUT_REGS_B bound to: 0 - type: integer 
-	Parameter C_MUX_PIPELINE_STAGES bound to: 0 - type: integer 
-	Parameter C_HAS_SOFTECC_INPUT_REGS_A bound to: 0 - type: integer 
-	Parameter C_HAS_SOFTECC_OUTPUT_REGS_B bound to: 0 - type: integer 
-	Parameter C_USE_SOFTECC bound to: 0 - type: integer 
-	Parameter C_USE_ECC bound to: 0 - type: integer 
-	Parameter C_EN_ECC_PIPE bound to: 0 - type: integer 
-	Parameter C_READ_LATENCY_A bound to: 1 - type: integer 
-	Parameter C_READ_LATENCY_B bound to: 1 - type: integer 
-	Parameter C_HAS_INJECTERR bound to: 0 - type: integer 
-	Parameter C_SIM_COLLISION_CHECK bound to: ALL - type: string 
-	Parameter C_COMMON_CLK bound to: 0 - type: integer 
-	Parameter C_DISABLE_WARN_BHV_COLL bound to: 0 - type: integer 
-	Parameter C_EN_SLEEP_PIN bound to: 0 - type: integer 
-	Parameter C_USE_URAM bound to: 0 - type: integer 
-	Parameter C_EN_RDADDRA_CHG bound to: 0 - type: integer 
-	Parameter C_EN_RDADDRB_CHG bound to: 0 - type: integer 
-	Parameter C_EN_DEEPSLEEP_PIN bound to: 0 - type: integer 
-	Parameter C_EN_SHUTDOWN_PIN bound to: 0 - type: integer 
-	Parameter C_EN_SAFETY_CKT bound to: 0 - type: integer 
-	Parameter C_DISABLE_WARN_BHV_RANGE bound to: 0 - type: integer 
-	Parameter C_COUNT_36K_BRAM bound to: 0 - type: string 
-	Parameter C_COUNT_18K_BRAM bound to: 1 - type: string 
-	Parameter C_EST_POWER_SUMMARY bound to: Estimated Power for IP     :     2.7033 mW - type: string 
-INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_6' declared at 'd:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/blk_mem_RAM/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195321' bound to instance 'U0' of component 'blk_mem_gen_v8_4_6' [d:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/blk_mem_RAM/synth/blk_mem_RAM.vhd:247]
-INFO: [Synth 8-256] done synthesizing module 'blk_mem_RAM' (0#1) [d:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/blk_mem_RAM/synth/blk_mem_RAM.vhd:75]
-INFO: [Synth 8-3491] module 'blk_mem_ROM' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/synth_1/.Xil/Vivado-13036-LAPTOP-S2JGJMUA/realtime/blk_mem_ROM_stub.vhdl:6' bound to instance 'ROM' of component 'blk_mem_ROM' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top.vhd:443]
-INFO: [Synth 8-638] synthesizing module 'blk_mem_ROM' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/synth_1/.Xil/Vivado-13036-LAPTOP-S2JGJMUA/realtime/blk_mem_ROM_stub.vhdl:16]
-	Parameter INPUT_COUNT bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'Register_c' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/Register.v:23' bound to instance 'Register_A' of component 'Register_c' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top.vhd:451]
-	Parameter INPUT_WIDTH bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'ALU' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/ALU.v:23' bound to instance 'ALU_inst' of component 'ALU' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top.vhd:464]
-INFO: [Synth 8-6157] synthesizing module 'ALU' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/ALU.v:23]
-	Parameter INPUT_WIDTH bound to: 8 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/ALU.v:23]
-	Parameter INPUT_COUNT bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'counter' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/Counter.v:23' bound to instance 'counter_main' of component 'counter' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top.vhd:480]
-INFO: [Synth 8-6157] synthesizing module 'counter__parameterized1' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/Counter.v:23]
-	Parameter INPUT_COUNT bound to: 8 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'counter__parameterized1' (0#1) [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/Counter.v:23]
-	Parameter DATA_WIDTH bound to: 8 - type: integer 
-	Parameter POINTER_WIDTH bound to: 3 - type: integer 
-INFO: [Synth 8-3491] module 'LIFO' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/LIFO.v:23' bound to instance 'LIFO_inst' of component 'LIFO' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top.vhd:494]
-INFO: [Synth 8-6157] synthesizing module 'LIFO' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/LIFO.v:23]
-	Parameter DATA_WIDTH bound to: 8 - type: integer 
-	Parameter POINTER_WIDTH bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'LIFO' (0#1) [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/LIFO.v:23]
-INFO: [Synth 8-3491] module 'input_logic' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/input.vhd:34' bound to instance 'input_logic_0' of component 'input_logic' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top.vhd:508]
-INFO: [Synth 8-638] synthesizing module 'input_logic' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/input.vhd:43]
-WARNING: [Synth 8-613] shared variable will be implemented as local to architecture [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/input.vhd:44]
-WARNING: [Synth 8-613] shared variable will be implemented as local to architecture [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/input.vhd:45]
-WARNING: [Synth 8-614] signal 'state' is read in the process but is not in the sensitivity list [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/input.vhd:78]
-WARNING: [Synth 8-614] signal 'inputs' is read in the process but is not in the sensitivity list [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/input.vhd:78]
-INFO: [Synth 8-256] done synthesizing module 'input_logic' (0#1) [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/input.vhd:43]
-INFO: [Synth 8-3491] module 'IO_logic' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/IO_logic.vhd:34' bound to instance 'IO_logic_0' of component 'IO_logic' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top.vhd:518]
-INFO: [Synth 8-638] synthesizing module 'IO_logic' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/IO_logic.vhd:44]
-WARNING: [Synth 8-613] shared variable will be implemented as local to architecture [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/IO_logic.vhd:45]
-WARNING: [Synth 8-613] shared variable will be implemented as local to architecture [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/IO_logic.vhd:46]
-WARNING: [Synth 8-613] shared variable will be implemented as local to architecture [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/IO_logic.vhd:47]
-WARNING: [Synth 8-613] shared variable will be implemented as local to architecture [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/IO_logic.vhd:48]
-INFO: [Synth 8-256] done synthesizing module 'IO_logic' (0#1) [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/IO_logic.vhd:44]
-	Parameter INPUT_COUNT bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'Register_c' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/Register.v:23' bound to instance 'Register_out' of component 'Register_c' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top.vhd:531]
-INFO: [Synth 8-256] done synthesizing module 'Top' (0#1) [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top.vhd:54]
-INFO: [Synth 8-3491] module 'seg7_sys' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/seg7_sys.vhd:34' bound to instance 'seg7_sys_inst' of component 'seg7_sys' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:261]
-INFO: [Synth 8-638] synthesizing module 'seg7_sys' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/seg7_sys.vhd:51]
-	Parameter INPUT_COUNT bound to: 3 - type: integer 
-INFO: [Synth 8-3491] module 'counter' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/Counter.v:23' bound to instance 'counter_inst' of component 'counter' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/seg7_sys.vhd:119]
-INFO: [Synth 8-3491] module 'number_to_digits' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/number_to_digits.vhd:36' bound to instance 'number_to_digits_inst' of component 'number_to_digits' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/seg7_sys.vhd:133]
-INFO: [Synth 8-638] synthesizing module 'number_to_digits' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/number_to_digits.vhd:46]
-WARNING: [Synth 8-613] shared variable will be implemented as local to architecture [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/number_to_digits.vhd:47]
-WARNING: [Synth 8-613] shared variable will be implemented as local to architecture [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/number_to_digits.vhd:48]
-WARNING: [Synth 8-613] shared variable will be implemented as local to architecture [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/number_to_digits.vhd:49]
-WARNING: [Synth 8-613] shared variable will be implemented as local to architecture [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/number_to_digits.vhd:50]
-WARNING: [Synth 8-613] shared variable will be implemented as local to architecture [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/number_to_digits.vhd:51]
-INFO: [Synth 8-256] done synthesizing module 'number_to_digits' (0#1) [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/number_to_digits.vhd:46]
-INFO: [Synth 8-3491] module 'decode_3_8_n' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/new/decode_3_8_n.vhd:34' bound to instance 'decode_segment_pick' of component 'decode_3_8_n' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/seg7_sys.vhd:144]
-INFO: [Synth 8-638] synthesizing module 'decode_3_8_n' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/new/decode_3_8_n.vhd:40]
-INFO: [Synth 8-256] done synthesizing module 'decode_3_8_n' (0#1) [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/new/decode_3_8_n.vhd:40]
-INFO: [Synth 8-3491] module 'Decode_7seg' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/new/Decode_7seg.vhd:35' bound to instance 'Decode_7seg_inst' of component 'Decode_7seg' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/seg7_sys.vhd:151]
-INFO: [Synth 8-638] synthesizing module 'Decode_7seg' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/new/Decode_7seg.vhd:55]
-WARNING: [Synth 8-613] shared variable will be implemented as local to architecture [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/new/Decode_7seg.vhd:56]
-WARNING: [Synth 8-614] signal 'dig_0' is read in the process but is not in the sensitivity list [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/new/Decode_7seg.vhd:58]
-WARNING: [Synth 8-614] signal 'dig_1' is read in the process but is not in the sensitivity list [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/new/Decode_7seg.vhd:58]
-WARNING: [Synth 8-614] signal 'dig_2' is read in the process but is not in the sensitivity list [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/new/Decode_7seg.vhd:58]
-WARNING: [Synth 8-614] signal 'dig_3' is read in the process but is not in the sensitivity list [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/new/Decode_7seg.vhd:58]
-WARNING: [Synth 8-614] signal 'dig_4' is read in the process but is not in the sensitivity list [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/new/Decode_7seg.vhd:58]
-WARNING: [Synth 8-614] signal 'dig_5' is read in the process but is not in the sensitivity list [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/new/Decode_7seg.vhd:58]
-WARNING: [Synth 8-614] signal 'dig_6' is read in the process but is not in the sensitivity list [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/new/Decode_7seg.vhd:58]
-WARNING: [Synth 8-614] signal 'dig_7' is read in the process but is not in the sensitivity list [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/new/Decode_7seg.vhd:58]
-INFO: [Synth 8-256] done synthesizing module 'Decode_7seg' (0#1) [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/new/Decode_7seg.vhd:55]
-INFO: [Synth 8-256] done synthesizing module 'seg7_sys' (0#1) [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/seg7_sys.vhd:51]
+INFO: [Synth 8-3491] module 'Top' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/synth_1/.Xil/Vivado-17568-LAPTOP-S2JGJMUA/realtime/Top_stub.vhdl:6' bound to instance 'Top_inst' of component 'Top' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:352]
+INFO: [Synth 8-638] synthesizing module 'Top' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/synth_1/.Xil/Vivado-17568-LAPTOP-S2JGJMUA/realtime/Top_stub.vhdl:29]
+INFO: [Synth 8-3491] module 'seg7_sys' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/synth_1/.Xil/Vivado-17568-LAPTOP-S2JGJMUA/realtime/seg7_sys_stub.vhdl:6' bound to instance 'seg7_sys_inst' of component 'seg7_sys' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:373]
+INFO: [Synth 8-638] synthesizing module 'seg7_sys' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/synth_1/.Xil/Vivado-17568-LAPTOP-S2JGJMUA/realtime/seg7_sys_stub.vhdl:24]
+WARNING: [Synth 8-5640] Port 'rsta_busy' is missing in component declaration [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:138]
+WARNING: [Synth 8-5640] Port 'rstb_busy' is missing in component declaration [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:138]
+INFO: [Synth 8-3491] module 'blk_mem_RAM' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/synth_1/.Xil/Vivado-17568-LAPTOP-S2JGJMUA/realtime/blk_mem_RAM_stub.vhdl:6' bound to instance 'RAM' of component 'blk_mem_RAM' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:394]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_RAM' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/synth_1/.Xil/Vivado-17568-LAPTOP-S2JGJMUA/realtime/blk_mem_RAM_stub.vhdl:26]
 INFO: [Synth 8-256] done synthesizing module 'Top_wrap' (0#1) [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:60]
-WARNING: [Synth 8-6014] Unused sequential element storage_reg[8] was removed.  [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/LIFO.v:41]
-WARNING: [Synth 8-3848] Net addr_b in module/entity Top does not have driver. [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top.vhd:272]
 WARNING: [Synth 8-3917] design Top_wrap has port JB[3] driven by constant 0
 WARNING: [Synth 8-3917] design Top_wrap has port JB[2] driven by constant 0
 WARNING: [Synth 8-3917] design Top_wrap has port JB[1] driven by constant 0
 WARNING: [Synth 8-3917] design Top_wrap has port JB[0] driven by constant 0
-WARNING: [Synth 8-7129] Port en_in in module decode_3_8_n is either unconnected or has no load
-WARNING: [Synth 8-7129] Port CLKB in module blk_mem_output_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port SBITERR_I in module blk_mem_output_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port DBITERR_I in module blk_mem_output_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port RDADDRECC_I[6] in module blk_mem_output_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port RDADDRECC_I[5] in module blk_mem_output_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port RDADDRECC_I[4] in module blk_mem_output_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port RDADDRECC_I[3] in module blk_mem_output_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port RDADDRECC_I[2] in module blk_mem_output_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port RDADDRECC_I[1] in module blk_mem_output_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port RDADDRECC_I[0] in module blk_mem_output_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port SBITERR in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
-WARNING: [Synth 8-7129] Port DBITERR in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
-WARNING: [Synth 8-7129] Port SSRA in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
-WARNING: [Synth 8-7129] Port SSRB in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
-WARNING: [Synth 8-7129] Port SLEEP in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
-WARNING: [Synth 8-7129] Port INJECTSBITERR in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
-WARNING: [Synth 8-7129] Port INJECTDBITERR in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ECCPIPECE in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
-WARNING: [Synth 8-7129] Port REGCEA[0] in module blk_mem_gen_generic_cstr is either unconnected or has no load
-WARNING: [Synth 8-7129] Port REGCEB[0] in module blk_mem_gen_generic_cstr is either unconnected or has no load
-WARNING: [Synth 8-7129] Port INJECTSBITERR in module blk_mem_gen_generic_cstr is either unconnected or has no load
-WARNING: [Synth 8-7129] Port INJECTDBITERR in module blk_mem_gen_generic_cstr is either unconnected or has no load
-WARNING: [Synth 8-7129] Port RSTA in module blk_mem_input_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port REGCEA in module blk_mem_input_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port RSTB in module blk_mem_input_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ENB in module blk_mem_input_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port REGCEB in module blk_mem_input_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port INJECTDBITERR in module blk_mem_input_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port INJECTSBITERR in module blk_mem_input_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AClk in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_ARESETN in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWID[3] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWID[2] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWID[1] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWID[0] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[31] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[30] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[29] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[28] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[27] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[26] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[25] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[24] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[23] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[22] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[21] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[20] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[19] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[18] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[17] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[16] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[15] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[14] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[13] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[12] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[11] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[10] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[9] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[8] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[7] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[6] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[5] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[4] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[3] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[2] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[1] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[0] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWLEN[7] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWLEN[6] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWLEN[5] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWLEN[4] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWLEN[3] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWLEN[2] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWLEN[1] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWLEN[0] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWSIZE[2] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWSIZE[1] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWSIZE[0] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWBURST[1] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWBURST[0] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWVALID in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_WDATA[7] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_WDATA[6] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_WDATA[5] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_WDATA[4] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_WDATA[3] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_WDATA[2] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_WDATA[1] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_WDATA[0] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_WSTRB[0] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_WLAST in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_WVALID in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_BREADY in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_ARID[3] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_ARID[2] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_ARID[1] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_ARID[0] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_ARADDR[31] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_ARADDR[30] in module blk_mem_gen_v8_4_6_synth is either unconnected or has no load
-INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-7129] Port BTL in module Top_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BTR in module Top_wrap is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1609.895 ; gain = 744.004
+Finished RTL Elaboration : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1373.406 ; gain = 507.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1609.895 ; gain = 744.004
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1373.406 ; gain = 507.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1609.895 ; gain = 744.004
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1373.406 ; gain = 507.098
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 1609.895 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.187 . Memory (MB): peak = 1375.883 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [d:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/blk_mem_ROM/blk_mem_ROM/blk_mem_ROM_in_context.xdc] for cell 'Top_inst/ROM'
-Finished Parsing XDC File [d:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/blk_mem_ROM/blk_mem_ROM/blk_mem_ROM_in_context.xdc] for cell 'Top_inst/ROM'
+Parsing XDC File [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/seg7_sys_synth_1/seg7_sys/seg7_sys_in_context.xdc] for cell 'seg7_sys_inst'
+Finished Parsing XDC File [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/seg7_sys_synth_1/seg7_sys/seg7_sys_in_context.xdc] for cell 'seg7_sys_inst'
+Parsing XDC File [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/Top_synth_1/Top/Top_in_context.xdc] for cell 'Top_inst'
+Finished Parsing XDC File [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/Top_synth_1/Top/Top_in_context.xdc] for cell 'Top_inst'
+Parsing XDC File [d:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/blk_mem_RAM/blk_mem_RAM/blk_mem_RAM_in_context.xdc] for cell 'RAM'
+Finished Parsing XDC File [d:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/blk_mem_RAM/blk_mem_RAM/blk_mem_RAM_in_context.xdc] for cell 'RAM'
 Parsing XDC File [d:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/clk_wiz_10MHz/clk_wiz_10MHz_board.xdc] for cell 'main_clk/inst'
 Finished Parsing XDC File [d:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/clk_wiz_10MHz/clk_wiz_10MHz_board.xdc] for cell 'main_clk/inst'
 Parsing XDC File [d:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/clk_wiz_10MHz/clk_wiz_10MHz.xdc] for cell 'main_clk/inst'
@@ -409,87 +228,49 @@ Resolution: To avoid this warning, move constraints listed in [.Xil/Top_wrap_pro
 INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1609.895 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1480.348 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1609.895 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 1480.348 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 1609.895 ; gain = 744.004
+Finished Constraint Validation : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 1480.348 ; gain = 614.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 1609.895 ; gain = 744.004
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 1480.348 ; gain = 614.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property KEEP_HIERARCHY = SOFT for main_clk/inst. (constraint file  D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/synth_1/dont_touch.xdc, line 15).
-Applied set_property KEEP_HIERARCHY = SOFT for Top_inst/RAM. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for main_clk/inst. (constraint file  D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/synth_1/dont_touch.xdc, line 10).
 Applied set_property KEEP_HIERARCHY = SOFT for main_clk. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for Top_inst/ROM. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for RAM. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 1609.895 ; gain = 744.004
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 1480.348 ; gain = 614.039
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'input_logic'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                 iSTATE1 |                             0001 |                               00
-*
-                 iSTATE2 |                             0010 |                               01
-                  iSTATE |                             0100 |                               10
-                 iSTATE0 |                             1000 |                               11
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'input_logic'
-WARNING: [Synth 8-327] inferring latch for variable 'saved_reg' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/input.vhd:58]
-WARNING: [Synth 8-327] inferring latch for variable 'memory_reg' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/input.vhd:60]
-WARNING: [Synth 8-327] inferring latch for variable 'aquire_f.lock_reg' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/input.vhd:82]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 1609.895 ; gain = 744.004
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:42 ; elapsed = 00:00:46 . Memory (MB): peak = 1480.348 ; gain = 614.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input   10 Bit       Adders := 1     
-	   3 Input    8 Bit       Adders := 1     
-	   2 Input    8 Bit       Adders := 1     
-	   2 Input    7 Bit       Adders := 1     
-	   2 Input    3 Bit       Adders := 4     
-+---XORs : 
-	   2 Input      8 Bit         XORs := 2     
+	   2 Input    7 Bit       Adders := 19    
 +---Registers : 
-	                8 Bit    Registers := 19    
-	                4 Bit    Registers := 5     
-	                3 Bit    Registers := 6     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 13    
+	               64 Bit    Registers := 19    
+	                7 Bit    Registers := 19    
+	                1 Bit    Registers := 23    
 +---Muxes : 
-	   8 Input    8 Bit        Muxes := 2     
-	   2 Input    8 Bit        Muxes := 28    
-	   4 Input    8 Bit        Muxes := 23    
-	   2 Input    7 Bit        Muxes := 2     
-	   2 Input    4 Bit        Muxes := 6     
-	   3 Input    4 Bit        Muxes := 1     
-	   4 Input    3 Bit        Muxes := 19    
-	   2 Input    3 Bit        Muxes := 33    
-	  37 Input    3 Bit        Muxes := 3     
-	   4 Input    2 Bit        Muxes := 1     
-	   2 Input    2 Bit        Muxes := 4     
-	   4 Input    1 Bit        Muxes := 7     
-	   2 Input    1 Bit        Muxes := 48    
-	  37 Input    1 Bit        Muxes := 4     
-	  39 Input    1 Bit        Muxes := 1     
-	   8 Input    1 Bit        Muxes := 1     
-	   3 Input    1 Bit        Muxes := 2     
-	  12 Input    1 Bit        Muxes := 7     
+	   2 Input   64 Bit        Muxes := 19    
+	   2 Input    1 Bit        Muxes := 19    
+	   4 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -506,33 +287,32 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-3917] design Top_wrap has port DT driven by constant 1
 WARNING: [Synth 8-3917] design Top_wrap has port JB[3] driven by constant 0
 WARNING: [Synth 8-3917] design Top_wrap has port JB[2] driven by constant 0
 WARNING: [Synth 8-3917] design Top_wrap has port JB[1] driven by constant 0
 WARNING: [Synth 8-3917] design Top_wrap has port JB[0] driven by constant 0
-WARNING: [Synth 8-3332] Sequential element (Top_inst/input_logic_0/FSM_onehot_state_reg[3]) is unused and will be removed from module Top_wrap.
-WARNING: [Synth 8-3332] Sequential element (Top_inst/input_logic_0/FSM_onehot_state_reg[0]) is unused and will be removed from module Top_wrap.
+WARNING: [Synth 8-7129] Port BTL in module Top_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BTR in module Top_wrap is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 1609.895 ; gain = 744.004
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:55 ; elapsed = 00:01:00 . Memory (MB): peak = 1480.348 ; gain = 614.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:57 ; elapsed = 00:00:58 . Memory (MB): peak = 1609.895 ; gain = 744.004
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:09 ; elapsed = 00:01:15 . Memory (MB): peak = 1480.348 ; gain = 614.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:57 ; elapsed = 00:00:58 . Memory (MB): peak = 1609.895 ; gain = 744.004
+Finished Timing Optimization : Time (s): cpu = 00:01:10 ; elapsed = 00:01:16 . Memory (MB): peak = 1480.348 ; gain = 614.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:57 ; elapsed = 00:00:58 . Memory (MB): peak = 1609.895 ; gain = 744.004
+Finished Technology Mapping : Time (s): cpu = 00:01:13 ; elapsed = 00:01:19 . Memory (MB): peak = 1480.348 ; gain = 614.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -550,37 +330,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1609.895 ; gain = 744.004
+Finished IO Insertion : Time (s): cpu = 00:01:21 ; elapsed = 00:01:27 . Memory (MB): peak = 1480.348 ; gain = 614.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1609.895 ; gain = 744.004
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:21 ; elapsed = 00:01:27 . Memory (MB): peak = 1480.348 ; gain = 614.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1609.895 ; gain = 744.004
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:22 ; elapsed = 00:01:28 . Memory (MB): peak = 1480.348 ; gain = 614.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1609.895 ; gain = 744.004
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:22 ; elapsed = 00:01:28 . Memory (MB): peak = 1480.348 ; gain = 614.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1609.895 ; gain = 744.004
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:22 ; elapsed = 00:01:28 . Memory (MB): peak = 1480.348 ; gain = 614.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1609.895 ; gain = 744.004
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:22 ; elapsed = 00:01:28 . Memory (MB): peak = 1480.348 ; gain = 614.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -590,58 +370,52 @@ Report BlackBoxes:
 +------+--------------+----------+
 |      |BlackBox name |Instances |
 +------+--------------+----------+
-|1     |blk_mem_ROM   |         1|
+|1     |Top           |         1|
+|2     |seg7_sys      |         1|
+|3     |blk_mem_RAM   |         1|
 +------+--------------+----------+
 
 Report Cell Usage: 
 +------+-----------------+------+
 |      |Cell             |Count |
 +------+-----------------+------+
-|1     |blk_mem_ROM_bbox |     1|
-|2     |BUFG             |     3|
-|3     |CARRY4           |    34|
-|4     |LUT1             |    11|
-|5     |LUT2             |    99|
-|6     |LUT3             |    54|
-|7     |LUT4             |    34|
-|8     |LUT5             |   100|
-|9     |LUT6             |   186|
-|10    |MMCME2_ADV       |     1|
-|11    |MUXF7            |    12|
-|12    |RAMB18E1         |     1|
-|13    |FDCE             |    78|
-|14    |FDRE             |   195|
-|15    |FDSE             |    10|
-|16    |LD               |     8|
-|17    |LDC              |     2|
-|18    |IBUF             |    15|
-|19    |IOBUF            |     8|
-|20    |OBUF             |    43|
+|1     |Top_bbox         |     1|
+|2     |blk_mem_RAM_bbox |     1|
+|3     |seg7_sys_bbox    |     1|
+|4     |BUFG             |     2|
+|5     |CARRY4           |   282|
+|6     |LUT1             |    31|
+|7     |LUT2             |   527|
+|8     |LUT3             |   376|
+|9     |LUT4             |   209|
+|10    |LUT5             |    16|
+|11    |LUT6             |   925|
+|12    |MMCME2_ADV       |     1|
+|13    |FDRE             |  1534|
+|14    |IBUF             |    15|
+|15    |OBUF             |    43|
 +------+-----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1609.895 ; gain = 744.004
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:22 ; elapsed = 00:01:28 . Memory (MB): peak = 1480.348 ; gain = 614.039
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 148 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:01:01 . Memory (MB): peak = 1609.895 ; gain = 744.004
-Synthesis Optimization Complete : Time (s): cpu = 00:01:03 ; elapsed = 00:01:05 . Memory (MB): peak = 1609.895 ; gain = 744.004
+Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:56 ; elapsed = 00:01:19 . Memory (MB): peak = 1480.348 ; gain = 507.098
+Synthesis Optimization Complete : Time (s): cpu = 00:01:22 ; elapsed = 00:01:28 . Memory (MB): peak = 1480.348 ; gain = 614.039
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1609.895 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 66 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.127 . Memory (MB): peak = 1480.348 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 283 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1609.895 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1480.348 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 18 instances were transformed.
-  IOBUF => IOBUF (IBUF, OBUFT): 8 instances
-  LD => LDCE: 8 instances
-  LDC => LDCE: 2 instances
+No Unisim elements were transformed.
 
-Synth Design complete | Checksum: e240d2d7
+Synth Design complete | Checksum: 55a78833
 INFO: [Common 17-83] Releasing license: Synthesis
-113 Infos, 143 Warnings, 0 Critical Warnings and 0 Errors encountered.
+80 Infos, 19 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:09 ; elapsed = 00:01:11 . Memory (MB): peak = 1609.895 ; gain = 1144.086
+synth_design: Time (s): cpu = 00:01:35 ; elapsed = 00:01:47 . Memory (MB): peak = 1480.348 ; gain = 1015.688
 INFO: [Common 17-1381] The checkpoint 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/synth_1/Top_wrap.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Top_wrap_utilization_synth.rpt -pb Top_wrap_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Dec  7 18:35:52 2023...
+INFO: [Common 17-206] Exiting Vivado at Wed Dec 13 22:47:40 2023...

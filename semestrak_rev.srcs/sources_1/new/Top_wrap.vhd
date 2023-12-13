@@ -74,17 +74,19 @@ component Top
     CLK : in std_logic;
     enter_bt : in std_logic;
     Inputs : in std_logic_vector (7 downto 0);
+    Bus_mem : in std_logic_vector (7 downto 0);
     IO_ports : inout std_logic_vector (7 downto 0);
     number_o : out std_logic_vector(7 downto 0);
     CLK_OUTPUT : out std_logic;
     INPT_EN : out std_logic;
     PAUSE : out std_logic;
     STOP : out std_logic;
+    save_mem : out std_logic_vector(0 downto 0);
     FLAGS : out std_logic_vector (3 downto 0);
     INSTRUCTION : out std_logic_vector (7 downto 0);
     STEP : out std_logic_vector (2 downto 0);
     BUS_o : out std_logic_vector (7 downto 0);
-    CLK_AuMa_SW : in std_logic
+    Addr_o : out std_logic_vector (7 downto 0)
   );
 end component;
 
@@ -132,6 +134,38 @@ component seg7_sys
   );
 end component;
 
+
+COMPONENT blk_mem_RAM
+PORT (
+  clka : IN STD_LOGIC;
+  ena : IN STD_LOGIC;
+  rsta : in STD_LOGIC;
+  wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+  addra : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+  dina : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+  douta : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+  clkb : IN STD_LOGIC;
+  web : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+  addrb : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+  dinb : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+  doutb : OUT STD_LOGIC_VECTOR(7 DOWNTO 0) 
+);
+END COMPONENT;
+
+component debounce
+  generic (
+    CLK_FREQ_MHZ : NATURAL;
+    SAMPLES : NATURAL;
+    LENGTH_US : NATURAL
+  );
+  port (
+    clk : in STD_LOGIC;
+    rst : in std_logic;
+    btn_i : in STD_LOGIC;
+    btn_deb_o : out STD_LOGIC
+  );
+end component;
+
 signal Rst : std_logic;
 signal CLK : std_logic;
 signal CLK_7seg : std_logic;
@@ -157,26 +191,102 @@ signal clk_10Hz : std_logic;
 signal clk_100Hz : std_logic;
 signal clk_2Hz : std_logic;
 
+signal mem_save : std_logic_vector (0 downto 0);
+signal addr_full : std_logic_vector (7 downto 0);
+signal addr_b : std_logic_vector (7 downto 0);
+signal ram_b : std_logic_vector (7 downto 0);
+signal ram_a : std_logic_vector (7 downto 0);
+signal rom_a : std_logic_vector (7 downto 0);
+signal mem_o : std_logic_vector (7 downto 0);
+
+signal BTL_deb : std_logic;
+signal BTR_deb : std_logic;
+signal BTC_deb : std_logic;
+signal BTD_deb : std_logic;
+signal BTU_deb : std_logic;
+signal SWs_deb : std_logic_vector (15 downto 0);
+
+constant CLK_FREQ_MHZ : natural := 10;
+constant SAMPLES : natural := 64;
+constant LENGTH_US : natural := 500;
+
 begin
     clk <= clk_main and CLK_AuMa_SW;
-    Rst <= BTU;
-    CLK_pulse <= BTC;
-    enter_bt <= BTD;
-    CLK_AuMa_SW <= SWs(15);
-    CLK_pick  <= SWs(14 downto 13);
-    Inputs <= SWs(7 downto 0);
+    Rst <= BTU_deb;
+    CLK_pulse <= BTC_deb;
+    enter_bt <= BTD_deb;
+    CLK_AuMa_SW <= SWs_deb(15);
+    CLK_pick  <= SWs_deb(14 downto 13);
+    Inputs <= SWs_deb(7 downto 0);
     RGB1_G <= CLK_OUTPUT;
     RGB1_B <= INPT_EN;
     RGB1_R <= STOP;
     LEDs(7 downto 0) <= INSTRUCTION;
-    LEDs(15 downto 8) <= BUS_o;
+    LEDs(15 downto 8) <= Bus_o;
     JB(7 downto 4) <= FLAGS;
     JB(3 downto 0) <= (others=>'0');
+    addr_b <= (others=>'0');
     
     clk_main <= clk_2Hz when CLK_pick = "00" else
                 clk_10Hz when CLK_pick = "01" else
                 clk_100Hz when CLK_pick = "10" else
                 CLK_pulse;
+
+BTC_Debounce : debounce
+generic map (
+  CLK_FREQ_MHZ => CLK_FREQ_MHZ,
+  SAMPLES => SAMPLES,
+  LENGTH_US => LENGTH_US
+)
+port map (
+  clk => clk_10MHz,
+  rst => Rst,
+  btn_i => BTC,
+  btn_deb_o => BTC_deb
+);
+
+
+BTD_Debounce : debounce
+generic map (
+  CLK_FREQ_MHZ => CLK_FREQ_MHZ,
+  SAMPLES => SAMPLES,
+  LENGTH_US => LENGTH_US
+)
+port map (
+  clk => clk_10MHz,
+  rst => Rst,
+  btn_i => BTD,
+  btn_deb_o => BTD_deb
+);
+
+
+BTU_Debounce : debounce
+generic map (
+  CLK_FREQ_MHZ => CLK_FREQ_MHZ,
+  SAMPLES => SAMPLES,
+  LENGTH_US => LENGTH_US
+)
+port map (
+  clk => clk_10MHz,
+  rst => '0',
+  btn_i => BTU,
+  btn_deb_o => BTU_deb
+);
+
+switch_debounce: for i in SWs'range generate
+  SW_Debounce : debounce
+    generic map (
+      CLK_FREQ_MHZ => CLK_FREQ_MHZ,
+      SAMPLES => SAMPLES,
+      LENGTH_US => LENGTH_US
+    )
+    port map (
+      clk => clk_10MHz,
+      rst => Rst,
+      btn_i => SWs(i),
+      btn_deb_o => SWs_deb(i)
+    );
+end generate switch_debounce;
 
 main_clk : clk_wiz_10MHz
     port map ( 
@@ -245,17 +355,19 @@ main_clk : clk_wiz_10MHz
     CLK => CLK,
     enter_bt => enter_bt,
     Inputs => Inputs,
+    Bus_mem => mem_o,
     IO_ports => JA,
     CLK_OUTPUT => CLK_OUTPUT,
     number_o => number_o,
     INPT_EN => INPT_EN,
     PAUSE => PAUSE,
     STOP => STOP,
+    save_mem => mem_save,
     FLAGS => FLAGS,
     INSTRUCTION => INSTRUCTION,
     STEP => STEP,
     BUS_o => BUS_o,
-    CLK_AuMa_SW => CLK_AuMa_SW
+    Addr_o => addr_full
   );
 
   seg7_sys_inst : seg7_sys
@@ -273,6 +385,35 @@ main_clk : clk_wiz_10MHz
     DT => DT,
     Dig_en => Dig_en
   );
+
+--  with addr_full(7) select
+--    mem_o <=  rom_a when '0',
+--              ram_a when others;
+mem_o <= ram_a;
+
+  RAM : blk_mem_RAM
+  PORT MAP (
+    clka => clk,--_10MHz,
+    ena => '1',
+    rsta => Rst,
+    wea => mem_save,
+    addra => addr_full,
+    dina => BUS_o,
+    douta => ram_a,
+    clkb => '0',
+    web => "0",
+    addrb => addr_b,
+    dinb => "00000000",
+    doutb => ram_b
+  );
+
+--ROM : blk_mem_ROM
+--  PORT map (
+--    clka => clk,--_10MHz,
+--    ena => '1',
+--    addra => addr_full(6 downto 0),
+--    douta => rom_a
+--  );
 
 
 end Behavioral;

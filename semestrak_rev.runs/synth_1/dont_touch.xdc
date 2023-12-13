@@ -3,13 +3,8 @@
 
 # XDC: imports/new/constrains.xdc
 
-# IP: ip/blk_mem_RAM/blk_mem_RAM.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_RAM || ORIG_REF_NAME==blk_mem_RAM} -quiet] -quiet
-
 # IP: ip/clk_wiz_10MHz/clk_wiz_10MHz.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==clk_wiz_10MHz || ORIG_REF_NAME==clk_wiz_10MHz} -quiet] -quiet
-
-# XDC: d:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/blk_mem_RAM/blk_mem_RAM_ooc.xdc
 
 # XDC: d:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/clk_wiz_10MHz/clk_wiz_10MHz_board.xdc
 set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==clk_wiz_10MHz || ORIG_REF_NAME==clk_wiz_10MHz} -quiet] {/inst } ]/inst ] -quiet] -quiet

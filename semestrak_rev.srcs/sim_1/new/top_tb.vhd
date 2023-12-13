@@ -94,19 +94,29 @@ begin
   );
 
   BTC <= not BTC after clk_period/2;
-  clk_100MHz <= not clk_100MHz after 5 ns;
+  clk_100MHz <= not clk_100MHz after clk_period/2;
   BTU <= '0';
   SWs(15 downto 13) <= "111";
   BTL <= '0';
   BTR <= '0';
-  SWs(7 downto 0) <= "10101010";
   
   BTD_test : process
   begin
     BTD <= '0';
-    wait for 4 * clk_period;
+    SWs(7 downto 0) <= "00000000";
+    wait for 10 * clk_period;
     BTD <= '1';
     wait for 4 * clk_period;
+    BTD <= '0';
+    SWs(7 downto 0) <= "00000000";
+    wait for 10 * clk_period;
+    BTD <= '1';
+    wait for 4 * clk_period;
+    BTD <= '0';
+    SWs(7 downto 0) <= "00000001";
+    wait for 10 * clk_period;
+    BTD <= '1';
+    wait for 6 * clk_period;
   end process;
 
 

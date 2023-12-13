@@ -115,8 +115,6 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -124,10 +122,7 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param checkpoint.writeSynthRtdsInDcp 1
   set_param chipscope.maxJobs 2
-  set_param synth.incrementalSynthesisCache D:/projekty/CVUT/Vivado2023.1/semestrak_rev/.Xil/Vivado-2056-LAPTOP-S2JGJMUA/incrSyn
-  set_param xicom.use_bs_reader 1
   set_param runs.launchOptions { -jobs 8  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a100tcsg324-1
@@ -143,12 +138,18 @@ OPTRACE "set parameters" START { }
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/synth_1/Top_wrap.dcp
-  read_ip -quiet D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/ip/blk_mem_RAM/blk_mem_RAM.xci
   read_ip -quiet D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/ip/clk_wiz_10MHz/clk_wiz_10MHz.xci
+  read_ip -quiet D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/ip/blk_mem_RAM/blk_mem_RAM.xci
   read_ip -quiet D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/ip/blk_mem_ROM/blk_mem_ROM.xci
+  add_files -quiet D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/seg7_sys_synth_1/seg7_sys.dcp
+  set_property netlist_only true [get_files D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/seg7_sys_synth_1/seg7_sys.dcp]
+  add_files -quiet D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/Top_synth_1/Top.dcp
+  set_property netlist_only true [get_files D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/Top_synth_1/Top.dcp]
 OPTRACE "read constraints: implementation" START { }
   read_xdc -mode out_of_context D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/ALU/new/ALU_ooc.xdc
   read_xdc D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/constrs_1/imports/new/constrains.xdc
+  read_xdc -mode out_of_context -ref seg7_sys D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/seg7_sys/new/seg7_sys_ooc.xdc
+  read_xdc -mode out_of_context -ref Top D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/Top/new/Top_ooc.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

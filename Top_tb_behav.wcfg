@@ -11,12 +11,12 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="21.162390546 ms"></ZoomStartTime>
-      <ZoomEndTime time="55.562390547 ms"></ZoomEndTime>
-      <Cursor1Time time="36.250000000 ms"></Cursor1Time>
+      <ZoomStartTime time="0.000000000 ms"></ZoomStartTime>
+      <ZoomEndTime time="50.142372883 ms"></ZoomEndTime>
+      <Cursor1Time time="21.000000000 ms"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="159"></NameColumnWidth>
+      <NameColumnWidth column_width="154"></NameColumnWidth>
       <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="22" />
@@ -27,7 +27,6 @@
    <wvobject fp_name="/Top_tb/IO_ports" type="array">
       <obj_property name="ElementShortName">IO_ports[7:0]</obj_property>
       <obj_property name="ObjectShortName">IO_ports[7:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/Top_tb/CA" type="logic">
       <obj_property name="ElementShortName">CA</obj_property>
@@ -193,30 +192,6 @@
          <obj_property name="ElementShortName">flags[3:0]</obj_property>
          <obj_property name="ObjectShortName">flags[3:0]</obj_property>
          <obj_property name="isExpanded"></obj_property>
-         <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/Kontroler_0/flags[3]" type="logic">
-            <obj_property name="DisplayName">label</obj_property>
-            <obj_property name="ElementShortName">[3]</obj_property>
-            <obj_property name="ObjectShortName">[3]</obj_property>
-            <obj_property name="label">neg</obj_property>
-         </wvobject>
-         <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/Kontroler_0/flags[2]" type="logic">
-            <obj_property name="DisplayName">label</obj_property>
-            <obj_property name="ElementShortName">[2]</obj_property>
-            <obj_property name="ObjectShortName">[2]</obj_property>
-            <obj_property name="label">zer</obj_property>
-         </wvobject>
-         <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/Kontroler_0/flags[1]" type="logic">
-            <obj_property name="DisplayName">label</obj_property>
-            <obj_property name="ElementShortName">[1]</obj_property>
-            <obj_property name="ObjectShortName">[1]</obj_property>
-            <obj_property name="label">car</obj_property>
-         </wvobject>
-         <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/Kontroler_0/flags[0]" type="logic">
-            <obj_property name="DisplayName">label</obj_property>
-            <obj_property name="ElementShortName">[0]</obj_property>
-            <obj_property name="ObjectShortName">[0]</obj_property>
-            <obj_property name="label">ovr</obj_property>
-         </wvobject>
       </wvobject>
       <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/Kontroler_0/step" type="array">
          <obj_property name="ElementShortName">step[2:0]</obj_property>
@@ -279,54 +254,6 @@
          <obj_property name="ObjectShortName">step_int</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject fp_name="group208" type="group">
-      <obj_property name="label">ROM</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/ROM/clka" type="logic">
-         <obj_property name="ElementShortName">clka</obj_property>
-         <obj_property name="ObjectShortName">clka</obj_property>
-      </wvobject>
-      <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/ROM/ena" type="logic">
-         <obj_property name="ElementShortName">ena</obj_property>
-         <obj_property name="ObjectShortName">ena</obj_property>
-      </wvobject>
-      <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/ROM/addra" type="array">
-         <obj_property name="ElementShortName">addra[6:0]</obj_property>
-         <obj_property name="ObjectShortName">addra[6:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/ROM/douta" type="array">
-         <obj_property name="ElementShortName">douta[7:0]</obj_property>
-         <obj_property name="ObjectShortName">douta[7:0]</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject fp_name="group209" type="group">
-      <obj_property name="label">RAM</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/RAM/clka" type="logic">
-         <obj_property name="ElementShortName">clka</obj_property>
-         <obj_property name="ObjectShortName">clka</obj_property>
-      </wvobject>
-      <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/RAM/ena" type="logic">
-         <obj_property name="ElementShortName">ena</obj_property>
-         <obj_property name="ObjectShortName">ena</obj_property>
-      </wvobject>
-      <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/RAM/wea" type="array">
-         <obj_property name="ElementShortName">wea[0:0]</obj_property>
-         <obj_property name="ObjectShortName">wea[0:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/RAM/addra" type="array">
-         <obj_property name="ElementShortName">addra[6:0]</obj_property>
-         <obj_property name="ObjectShortName">addra[6:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/RAM/dina" type="array">
-         <obj_property name="ElementShortName">dina[7:0]</obj_property>
-         <obj_property name="ObjectShortName">dina[7:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/RAM/douta" type="array">
-         <obj_property name="ElementShortName">douta[7:0]</obj_property>
-         <obj_property name="ObjectShortName">douta[7:0]</obj_property>
-      </wvobject>
-   </wvobject>
    <wvobject fp_name="group174" type="group">
       <obj_property name="label">LIFO</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -386,7 +313,6 @@
    <wvobject fp_name="group265" type="group">
       <obj_property name="label">ALU</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/ALU_inst/clk" type="logic">
          <obj_property name="ElementShortName">clk</obj_property>
          <obj_property name="ObjectShortName">clk</obj_property>
@@ -435,10 +361,6 @@
       <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/ALU_inst/c" type="array">
          <obj_property name="ElementShortName">c[7:0]</obj_property>
          <obj_property name="ObjectShortName">c[7:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/ALU_inst/added" type="array">
-         <obj_property name="ElementShortName">added[8:0]</obj_property>
-         <obj_property name="ObjectShortName">added[8:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/ALU_inst/neg" type="logic">
          <obj_property name="ElementShortName">neg</obj_property>
@@ -543,6 +465,74 @@
       <wvobject fp_name="/Top_tb/Top_wrap_inst/Top_inst/Register_out/INPUT_COUNT" type="array">
          <obj_property name="ElementShortName">INPUT_COUNT[31:0]</obj_property>
          <obj_property name="ObjectShortName">INPUT_COUNT[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group157" type="group">
+      <obj_property name="label">ROM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/Top_tb/Top_wrap_inst/ROM/clka" type="logic">
+         <obj_property name="ElementShortName">clka</obj_property>
+         <obj_property name="ObjectShortName">clka</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Top_tb/Top_wrap_inst/ROM/ena" type="logic">
+         <obj_property name="ElementShortName">ena</obj_property>
+         <obj_property name="ObjectShortName">ena</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Top_tb/Top_wrap_inst/ROM/addra" type="array">
+         <obj_property name="ElementShortName">addra[6:0]</obj_property>
+         <obj_property name="ObjectShortName">addra[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Top_tb/Top_wrap_inst/ROM/douta" type="array">
+         <obj_property name="ElementShortName">douta[7:0]</obj_property>
+         <obj_property name="ObjectShortName">douta[7:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group169" type="group">
+      <obj_property name="label">RAM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/Top_tb/Top_wrap_inst/RAM/clka" type="logic">
+         <obj_property name="ElementShortName">clka</obj_property>
+         <obj_property name="ObjectShortName">clka</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Top_tb/Top_wrap_inst/RAM/ena" type="logic">
+         <obj_property name="ElementShortName">ena</obj_property>
+         <obj_property name="ObjectShortName">ena</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Top_tb/Top_wrap_inst/RAM/wea" type="array">
+         <obj_property name="ElementShortName">wea[0:0]</obj_property>
+         <obj_property name="ObjectShortName">wea[0:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Top_tb/Top_wrap_inst/RAM/addra" type="array">
+         <obj_property name="ElementShortName">addra[6:0]</obj_property>
+         <obj_property name="ObjectShortName">addra[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Top_tb/Top_wrap_inst/RAM/dina" type="array">
+         <obj_property name="ElementShortName">dina[7:0]</obj_property>
+         <obj_property name="ObjectShortName">dina[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Top_tb/Top_wrap_inst/RAM/douta" type="array">
+         <obj_property name="ElementShortName">douta[7:0]</obj_property>
+         <obj_property name="ObjectShortName">douta[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Top_tb/Top_wrap_inst/RAM/clkb" type="logic">
+         <obj_property name="ElementShortName">clkb</obj_property>
+         <obj_property name="ObjectShortName">clkb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Top_tb/Top_wrap_inst/RAM/web" type="array">
+         <obj_property name="ElementShortName">web[0:0]</obj_property>
+         <obj_property name="ObjectShortName">web[0:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Top_tb/Top_wrap_inst/RAM/addrb" type="array">
+         <obj_property name="ElementShortName">addrb[6:0]</obj_property>
+         <obj_property name="ObjectShortName">addrb[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Top_tb/Top_wrap_inst/RAM/dinb" type="array">
+         <obj_property name="ElementShortName">dinb[7:0]</obj_property>
+         <obj_property name="ObjectShortName">dinb[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Top_tb/Top_wrap_inst/RAM/doutb" type="array">
+         <obj_property name="ElementShortName">doutb[7:0]</obj_property>
+         <obj_property name="ObjectShortName">doutb[7:0]</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>

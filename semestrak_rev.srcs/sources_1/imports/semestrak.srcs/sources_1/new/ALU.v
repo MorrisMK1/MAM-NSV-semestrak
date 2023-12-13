@@ -35,10 +35,9 @@ module ALU#(
     );
     
     wire signed [INPUT_WIDTH-1:0] a,b,c;
-    wire signed [INPUT_WIDTH:0] added;
     wire neg, car, ovr, zer;
     
-    assign zer = ~(|c);
+    assign zer = c == 0;
     assign neg = c[INPUT_WIDTH-1];
     assign car = (control < 2) ? ((a + b + carry) >= 2**INPUT_WIDTH) : 0;
     assign ovr = (control < 6) ? (~a[INPUT_WIDTH-1] & ~b[INPUT_WIDTH-1] & c[INPUT_WIDTH-1])|

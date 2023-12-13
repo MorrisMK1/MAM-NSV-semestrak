@@ -1,7 +1,0 @@
-0.7
-2020.2
-May  7 2023
-15:24:31
-D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.sim/sim_1/impl/func/xsim/Top_tb_func_impl.vhd,1701854650,vhdl,D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sim_1/new/top_tb.vhd,,,\Register_c__parameterized1\;\Register_c__parameterized1_0\;\Register_c__parameterized1_1\;\Register_c__parameterized1_2\;\Register_c__parameterized1_5\;\counter__parameterized1\;\divider_custom__parameterized1\;\divider_custom__parameterized3\;\divider_custom__parameterized5\;alu;blk_mem_gen_generic_cstr;blk_mem_gen_prim_width;blk_mem_gen_prim_wrapper_init;blk_mem_gen_top;blk_mem_gen_v8_4_6;blk_mem_gen_v8_4_6_synth;blk_mem_ram;blk_mem_rom;blk_mem_rom_blk_mem_gen_generic_cstr;blk_mem_rom_blk_mem_gen_prim_width;blk_mem_rom_blk_mem_gen_prim_wrapper_init;blk_mem_rom_blk_mem_gen_top;blk_mem_rom_blk_mem_gen_v8_4_6;blk_mem_rom_blk_mem_gen_v8_4_6_synth;clk_wiz_10mhz;clk_wiz_10mhz_clk_wiz;counter;counter_3;divider_custom;input_logic;io_logic;kontroler;number_to_digits;register_c;register_c_4;seg7_sys;top;top_wrap,,,,,,,,
-D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.sim/sim_1/impl/func/xsim/glbl.v,1683266558,verilog,,,,glbl,,,,,,,,
-D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sim_1/new/top_tb.vhd,1701849459,vhdl,,,,top_tb,,,,,,,,

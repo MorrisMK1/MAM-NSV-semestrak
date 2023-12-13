@@ -50,7 +50,7 @@ assign rst_i_cnt = rst_i_cnt_reg & !(step == 0);
 assign stack_pop = source == 2;
 assign next_step = step_int | input_rdy;
 
-always @(posedge clk | rst) begin
+always @(posedge clk) begin
     if (rst == 1)begin
         count <= 0;
         target <= 7;
@@ -1609,6 +1609,49 @@ always @(posedge clk | rst) begin
                                     step_int <= 1;
                                     rst_i_cnt_reg <= 0;
                                 end 
+                            end
+                            default:begin            //konec instrukce
+                                count <= 0;
+                                target <= 7;
+                                source <= 7;
+                                ALU_cnt <=0;
+                                ALU_carry <=0;
+                                ALU_proc <=0;
+                                stop <= 0;
+                                inst_in <= 0;
+                                input_en <= 0;
+                                step_int <= 0;
+                                rst_i_cnt_reg <= 1;
+                            end
+                        endcase
+                    end
+                    8'b00100100:begin           //NOTE - Z -> RAM (36)
+                        case (step)
+                           3'b010:begin        //   (count -> addr)
+                                count <= 0;
+                                target <= 5;
+                                source <= 5;
+                                ALU_cnt <=0;
+                                ALU_carry <=0;
+                                ALU_proc <=0;
+                                stop <= 0;
+                                inst_in <= 0;
+                                input_en <= 0;
+                                step_int <= 1;
+                                rst_i_cnt_reg <= 0;
+                            end
+                            3'b011:begin            // (Z->RAM)
+                                count <= 1;
+                                target <= 0;
+                                source <= 1;
+                                ALU_cnt <=0;
+                                ALU_carry <=0;
+                                ALU_proc <=0;
+                                stop <= 0;
+                                inst_in <= 0;
+                                input_en <= 0;
+                                step_int <= 0;
+                                rst_i_cnt_reg <= 1;
                             end
                             default:begin            //konec instrukce
                                 count <= 0;

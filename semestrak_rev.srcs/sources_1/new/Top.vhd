@@ -38,45 +38,23 @@ entity Top is
   CLK : in std_logic;
   enter_bt : in std_logic;
   Inputs : in std_logic_vector (7 downto 0);
+  Bus_mem : in std_logic_vector (7 downto 0);
   IO_ports : inout std_logic_vector (7 downto 0);
   CLK_OUTPUT: out std_logic;
   INPT_EN: out std_logic;
   PAUSE: out std_logic;
   STOP: out std_logic;
+  save_mem : out std_logic_vector(0 downto 0);
   number_o : out std_logic_vector(7 downto 0);
   FLAGS : out std_logic_vector (3 downto 0);
   INSTRUCTION : out std_logic_vector (7 downto 0);
   STEP : out std_logic_vector (2 downto 0);
   BUS_o : out std_logic_vector (7 downto 0);
-  CLK_AuMa_SW : in std_logic);
+  Addr_o : out std_logic_vector (7 downto 0)
+  );
 end Top;
 
 architecture Behavioral of Top is
-
-  COMPONENT blk_mem_RAM
-  PORT (
-    clka : IN STD_LOGIC;
-    ena : IN STD_LOGIC;
-    wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    addra : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
-    dina : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-    douta : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-    clkb : IN STD_LOGIC;
-    web : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    addrb : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
-    dinb : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-    doutb : OUT STD_LOGIC_VECTOR(7 DOWNTO 0) 
-  );
-END COMPONENT;
-
-COMPONENT blk_mem_ROM
-PORT (
-  clka : IN STD_LOGIC;
-  ena : IN STD_LOGIC;
-  addra : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
-  douta : OUT STD_LOGIC_VECTOR(7 DOWNTO 0) 
-);
-END COMPONENT;
 
 component mux_var_8
   generic (
@@ -229,18 +207,9 @@ end component;
 
   -- output signals
   signal IO_ports_s : std_logic_vector (7 downto 0);
-  signal CA_s : std_logic;
-  signal CB_s : std_logic;
-  signal CC_s : std_logic;
-  signal CD_s : std_logic;
-  signal CE_s : std_logic;
-  signal CF_s : std_logic;
-  signal CG_s : std_logic;
-  signal DT_s : std_logic;
   signal INPT_RDY_s : std_logic;
   signal PAUSE_s : std_logic;
   signal STOP_s : std_logic;
-  signal Dig_en_s : std_logic_vector (7 downto 0);
   signal FLAGS_s : std_logic_vector (3 downto 0);
   signal INSTRUCTION_s : std_logic_vector (7 downto 0);
   signal STEP_s : std_logic_vector (2 downto 0);
@@ -268,14 +237,8 @@ end component;
   -- transport signals
   signal data_input : std_logic_vector (7 downto 0);
   signal addr_full : std_logic_vector (7 downto 0);
-  signal addr_par : std_logic_vector (6 downto 0);
-  signal addr_b : std_logic_vector (6 downto 0);
-  signal ram_b : std_logic_vector (7 downto 0);
-  signal ram_a : std_logic_vector (7 downto 0);
-  signal rom_a : std_logic_vector (7 downto 0);
   
   -- output signals
-  signal mem_o : std_logic_vector (7 downto 0);
   signal ALU_o : std_logic_vector (7 downto 0);
   signal stack_o : std_logic_vector (7 downto 0);
   signal io_o : std_logic_vector (7 downto 0);
@@ -284,7 +247,6 @@ end component;
   signal a_o : std_logic_vector (7 downto 0);
 
   -- input control signals
-  signal mem_i_f : std_logic_vector (0 downto 0);
   signal mem_i : std_logic;
   signal a_i : std_logic;
   signal io_i : std_logic;
@@ -292,15 +254,7 @@ end component;
   signal counter_i : std_logic;
   signal addr_i : std_logic;
   signal out_i : std_logic;
-  signal ALU_i : std_logic; -- unused, placeholder
 
-  -- 7 segment signals
-  signal number : std_logic_vector (7 downto 0);
-  signal digit_num : std_logic_vector (2 downto 0);
-  signal dig0 : std_logic_vector (3 downto 0);
-  signal dig1 : std_logic_vector (3 downto 0);
-  signal dig2 : std_logic_vector (3 downto 0);
-  signal dig3 : std_logic_vector (3 downto 0);
   
 begin
 
@@ -317,6 +271,10 @@ begin
   INSTRUCTION  <= INSTRUCTION_s;
   STEP  <= STEP_s;
   BUS_o <= data_input;
+  save_mem(0) <= mem_i;
+  with addr_i select
+    Addr_o <= data_input when '1',
+              addr_full when others;
 
 
 
@@ -326,7 +284,7 @@ begin
   )
   port map (
     picker => pick_out,
-    data0 => mem_o,
+    data0 => Bus_mem,
     data1 => ALU_o,
     data2 => stack_o,
     data3 => io_o,
@@ -351,7 +309,6 @@ begin
   counter_i <= out_act(4);-- done
   addr_i <= out_act(5); -- done
   out_i <= out_act(6);
-  ALU_i <= out_act(7);  -- done
 
   Kontroler_0 : Kontroler
   port map (
@@ -415,37 +372,6 @@ begin
     out_en => '1',
     data => data_input,
     data_out => addr_full
-  );
-
-  with addr_i select
-    addr_par <= addr_full(6 downto 0) when '0',
-                data_input(6 downto 0) when others;
-  with addr_full(7) select
-    mem_o <=  rom_a when '0',
-              ram_a when others;
-  mem_i_f(0) <= mem_i and addr_full(7);
-
-  RAM : blk_mem_RAM
-  PORT MAP (
-    clka => clk,--_10MHz,
-    ena => '1',
-    wea => mem_i_f,
-    addra => addr_par,
-    dina => data_input,
-    douta => ram_a,
-    clkb => '0',
-    web => "0",
-    addrb => addr_b,
-    dinb => "00000000",
-    doutb => ram_b
-  );
-
-ROM : blk_mem_ROM
-  PORT map (
-    clka => clk,--_10MHz,
-    ena => '1',
-    addra => addr_par,
-    douta => rom_a
   );
 
   Register_A : register_c

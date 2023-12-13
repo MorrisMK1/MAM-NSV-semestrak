@@ -70,12 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param checkpoint.writeSynthRtdsInDcp 1
-set_param chipscope.maxJobs 2
-set_param synth.incrementalSynthesisCache D:/projekty/CVUT/Vivado2023.1/semestrak_rev/.Xil/Vivado-2056-LAPTOP-S2JGJMUA/incrSyn
-set_param xicom.use_bs_reader 1
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -93,38 +87,28 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 add_files D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/ROM.coe
+add_files -quiet D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/seg7_sys_synth_1/seg7_sys.dcp
+set_property used_in_implementation false [get_files D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/seg7_sys_synth_1/seg7_sys.dcp]
+add_files -quiet D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/Top_synth_1/Top.dcp
+set_property used_in_implementation false [get_files D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/Top_synth_1/Top.dcp]
 read_verilog -library xil_defaultlib {
-  D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/Counter.v
-  D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/Kontroler.v
-  D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/Register.v
   D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/clocking_plex.v
-  D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/mux_var_8.v
   D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/Invertor.v
-  D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/LIFO.v
   D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/mux_variable.v
-  D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/ALU.v
   D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/FullAdder.v
 }
 read_vhdl -library xil_defaultlib {
-  D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/decode_3_8.vhd
-  D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top.vhd
-  D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/IO_logic.vhd
   D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd
   D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd
-  D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/input.vhd
-  D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/new/number_to_digits.vhd
-  D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/new/Decode_7seg.vhd
   D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd
-  D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/seg7_sys.vhd
-  D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/new/decode_3_8_n.vhd
 }
-read_ip -quiet D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/ip/blk_mem_RAM/blk_mem_RAM.xci
-set_property used_in_implementation false [get_files -all d:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/blk_mem_RAM/blk_mem_RAM_ooc.xdc]
-
 read_ip -quiet D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/ip/clk_wiz_10MHz/clk_wiz_10MHz.xci
 set_property used_in_implementation false [get_files -all d:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/clk_wiz_10MHz/clk_wiz_10MHz_board.xdc]
 set_property used_in_implementation false [get_files -all d:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/clk_wiz_10MHz/clk_wiz_10MHz.xdc]
 set_property used_in_implementation false [get_files -all d:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/clk_wiz_10MHz/clk_wiz_10MHz_ooc.xdc]
+
+read_ip -quiet D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/ip/blk_mem_RAM/blk_mem_RAM.xci
+set_property used_in_implementation false [get_files -all d:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/blk_mem_RAM/blk_mem_RAM_ooc.xdc]
 
 read_ip -quiet D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/ip/blk_mem_ROM/blk_mem_ROM.xci
 set_property used_in_implementation false [get_files -all d:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/blk_mem_ROM/blk_mem_ROM_ooc.xdc]
