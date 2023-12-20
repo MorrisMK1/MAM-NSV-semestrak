@@ -184,6 +184,7 @@ signal CLK_pick : std_logic_vector (1 downto 0);
 signal Inputs : std_logic_vector (7 downto 0);
 
 signal number_o : std_logic_vector(7 downto 0);
+signal digit_sel : std_logic_vector(7 downto 0);
 
 signal clk_main : std_logic;
 signal clk_10MHz : std_logic;
@@ -226,6 +227,7 @@ begin
     JB(7 downto 4) <= FLAGS;
     JB(3 downto 0) <= (others=>'0');
     addr_b <= (others=>'0');
+    Dig_en <= digit_sel(7 downto 0);
     
     clk_main <= clk_2Hz when CLK_pick = "00" else
                 clk_10Hz when CLK_pick = "01" else
@@ -282,7 +284,7 @@ switch_debounce: for i in SWs'range generate
     )
     port map (
       clk => clk_10MHz,
-      rst => Rst,
+      rst => '0',
       btn_i => SWs(i),
       btn_deb_o => SWs_deb(i)
     );
@@ -373,7 +375,7 @@ main_clk : clk_wiz_10MHz
   seg7_sys_inst : seg7_sys
   port map (
     clk => CLK_7seg,
-    rst => rst,
+    rst => '0',
     number => number_o,
     CA => CA,
     CB => CB,
@@ -383,7 +385,7 @@ main_clk : clk_wiz_10MHz
     CF => CF,
     CG => CG,
     DT => DT,
-    Dig_en => Dig_en
+    Dig_en => digit_sel
   );
 
 --  with addr_full(7) select

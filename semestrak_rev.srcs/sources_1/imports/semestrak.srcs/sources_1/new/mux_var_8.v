@@ -32,20 +32,16 @@ module mux_var_8 #(
   input [(INPUT_WIDTH)-1:0] data5,
   input [(INPUT_WIDTH)-1:0] data6,
   input [(INPUT_WIDTH)-1:0] data7,
-  output reg [INPUT_WIDTH-1:0]  data_out
+  output wire [INPUT_WIDTH-1:0]  data_out
 );
 
-always @(*) begin
-     case (picker)
-        default: data_out = data0;
-        3'b001: data_out = data1;
-        3'b010: data_out = data2;
-        3'b011: data_out = data3;
-        3'b100: data_out = data4;
-        3'b101: data_out = data5;
-        3'b110: data_out = data6;
-        3'b111: data_out = data7;
-     endcase
-end
+assign data_out = picker == 1 ? data1 :
+                  picker == 2 ? data2 :
+                  picker == 3 ? data3 :
+                  picker == 4 ? data4 :
+                  picker == 5 ? data5 :
+                  picker == 6 ? data6 :
+                  picker == 7 ? data7 :
+                  data0;
 
 endmodule

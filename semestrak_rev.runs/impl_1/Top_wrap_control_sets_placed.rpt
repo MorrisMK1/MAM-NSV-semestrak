@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Wed Dec 13 22:49:18 2023
+| Date         : Wed Dec 20 16:08:14 2023
 | Host         : LAPTOP-S2JGJMUA running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Top_wrap_control_sets_placed.rpt
 | Design       : Top_wrap
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    60 |
-|    Minimum number of control sets                        |    60 |
+| Total control sets                                       |    70 |
+|    Minimum number of control sets                        |    70 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    87 |
+| Unused register locations in slices containing registers |   179 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,14 +39,14 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    60 |
-| >= 0 to < 4        |     6 |
+| Total control sets |    70 |
+| >= 0 to < 4        |    27 |
 | >= 4 to < 6        |     0 |
-| >= 6 to < 8        |    13 |
+| >= 6 to < 8        |     2 |
 | >= 8 to < 10       |    14 |
-| >= 10 to < 12      |     2 |
+| >= 10 to < 12      |     1 |
 | >= 12 to < 14      |     1 |
-| >= 14 to < 16      |     2 |
+| >= 14 to < 16      |     3 |
 | >= 16              |    22 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
@@ -58,81 +58,91 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             100 |           55 |
-| No           | No                    | Yes                    |              27 |           10 |
-| No           | Yes                   | No                     |            1387 |          425 |
-| Yes          | No                    | No                     |              27 |            8 |
-| Yes          | No                    | Yes                    |              58 |           23 |
-| Yes          | Yes                   | No                     |             162 |           56 |
+| No           | No                    | No                     |             810 |          275 |
+| No           | No                    | Yes                    |              24 |            8 |
+| No           | Yes                   | No                     |             683 |          200 |
+| Yes          | No                    | No                     |              60 |           18 |
+| Yes          | No                    | Yes                    |               8 |            2 |
+| Yes          | Yes                   | No                     |             164 |           64 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+-----------------------------------+-----------------------------------------------------+----------------------------------------------------------------+------------------+----------------+--------------+
-|            Clock Signal           |                    Enable Signal                    |                        Set/Reset Signal                        | Slice Load Count | Bel Load Count | Bels / Slice |
-+-----------------------------------+-----------------------------------------------------+----------------------------------------------------------------+------------------+----------------+--------------+
-|  Top_inst/input_logic_0/lock1_out |                                                     | Top_inst/input_logic_0/saved_reg_i_2_n_0                       |                1 |              1 |         1.00 |
-|  Top_inst/input_logic_0/saved0    |                                                     | Top_inst/input_logic_0/saved_reg_i_2_n_0                       |                1 |              1 |         1.00 |
-|  divider_10Hz_clk/clka_BUFG       | Top_inst/Kontroler_0/stop_reg_0[0]                  | Top_inst/counter_step/memory/reset                             |                2 |              3 |         1.50 |
-|  divider_7seg_disp_clk/clk        |                                                     | BTU_Debounce/eqOp                                              |                1 |              3 |         3.00 |
-|  main_clk/inst/clk_out1           | BTU_Debounce/speed_ctrl.count_reg[0]_i_1_n_1        |                                                                |                1 |              3 |         3.00 |
-|  main_clk/inst/clk_out1           | BTU_Debounce/speed_ctrl.count_reg[0]_i_1_n_1        | BTU_Debounce/index[5]_i_1__1_n_0                               |                1 |              3 |         3.00 |
-|  main_clk/inst/clk_out1           | switch_debounce[3].SW_Debounce/index[6]_i_2__8_n_0  | switch_debounce[3].SW_Debounce/index[6]_i_1__8_n_0             |                3 |              7 |         2.33 |
-|  main_clk/inst/clk_out1           | BTC_Debounce/index[6]_i_2_n_0                       | BTC_Debounce/index[6]_i_1_n_0                                  |                2 |              7 |         3.50 |
-|  main_clk/inst/clk_out1           | BTD_Debounce/index[6]_i_2__0_n_0                    | BTD_Debounce/index[6]_i_1__0_n_0                               |                3 |              7 |         2.33 |
-|  main_clk/inst/clk_out1           | switch_debounce[4].SW_Debounce/index[6]_i_2__7_n_0  | switch_debounce[4].SW_Debounce/index[6]_i_1__7_n_0             |                2 |              7 |         3.50 |
-|  main_clk/inst/clk_out1           | switch_debounce[5].SW_Debounce/index[6]_i_2__6_n_0  | switch_debounce[5].SW_Debounce/index[6]_i_1__6_n_0             |                2 |              7 |         3.50 |
-|  main_clk/inst/clk_out1           | switch_debounce[14].SW_Debounce/index[6]_i_2__2_n_0 | switch_debounce[14].SW_Debounce/index[6]_i_1__2_n_0            |                2 |              7 |         3.50 |
-|  main_clk/inst/clk_out1           | switch_debounce[13].SW_Debounce/index[6]_i_2__3_n_0 | switch_debounce[13].SW_Debounce/index[6]_i_1__3_n_0            |                2 |              7 |         3.50 |
-|  main_clk/inst/clk_out1           | switch_debounce[7].SW_Debounce/index[6]_i_2__4_n_0  | switch_debounce[7].SW_Debounce/index[6]_i_1__4_n_0             |                3 |              7 |         2.33 |
-|  main_clk/inst/clk_out1           | switch_debounce[0].SW_Debounce/index[6]_i_2__11_n_0 | switch_debounce[0].SW_Debounce/index[6]_i_1__11_n_0            |                2 |              7 |         3.50 |
-|  main_clk/inst/clk_out1           | switch_debounce[15].SW_Debounce/index[6]_i_2__1_n_0 | switch_debounce[15].SW_Debounce/index[6]_i_1__1_n_0            |                2 |              7 |         3.50 |
-|  main_clk/inst/clk_out1           | switch_debounce[1].SW_Debounce/index[6]_i_2__10_n_0 | switch_debounce[1].SW_Debounce/index[6]_i_1__10_n_0            |                2 |              7 |         3.50 |
-|  main_clk/inst/clk_out1           | switch_debounce[2].SW_Debounce/index[6]_i_2__9_n_0  | switch_debounce[2].SW_Debounce/index[6]_i_1__9_n_0             |                2 |              7 |         3.50 |
-|  main_clk/inst/clk_out1           | switch_debounce[6].SW_Debounce/index[6]_i_2__5_n_0  | switch_debounce[6].SW_Debounce/index[6]_i_1__5_n_0             |                2 |              7 |         3.50 |
-|  divider_10Hz_clk/clka_BUFG       | Top_inst/Kontroler_0/target_reg[1]_4[0]             | BTU_Debounce/eqOp                                              |                3 |              8 |         2.67 |
-|  divider_10Hz_clk/clka_BUFG       | Top_inst/Kontroler_0/target_reg[2]_1[0]             | BTU_Debounce/eqOp                                              |                4 |              8 |         2.00 |
-|  divider_10Hz_clk/clka_BUFG       | Top_inst/Kontroler_0/count_reg_0[0]                 | BTU_Debounce/eqOp                                              |                4 |              8 |         2.00 |
-|  divider_10Hz_clk/clka_BUFG       | Top_inst/Kontroler_0/target_reg[1]_5[0]             | BTU_Debounce/eqOp                                              |                2 |              8 |         4.00 |
-|  divider_10Hz_clk/clka_BUFG       | Top_inst/Kontroler_0/target_reg[0]_0                | BTU_Debounce/eqOp                                              |                2 |              8 |         4.00 |
-|  divider_10Hz_clk/clka_BUFG       | Top_inst/input_logic_0/FSM_onehot_state_reg_n_0_[1] |                                                                |                1 |              8 |         8.00 |
-|  Top_inst/input_logic_0/memory__0 |                                                     |                                                                |                8 |              8 |         1.00 |
-|  divider_10Hz_clk/clka_BUFG       | Top_inst/LIFO_inst/storage[5][7]_i_1_n_0            | BTU_Debounce/eqOp                                              |                2 |              8 |         4.00 |
-|  divider_10Hz_clk/clka_BUFG       | Top_inst/Kontroler_0/target_reg[1]_1[0]             | BTU_Debounce/eqOp                                              |                3 |              8 |         2.67 |
-|  divider_10Hz_clk/clka_BUFG       | Top_inst/LIFO_inst/storage[6][7]_i_1_n_0            | BTU_Debounce/eqOp                                              |                3 |              8 |         2.67 |
-|  divider_10Hz_clk/clka_BUFG       | Top_inst/LIFO_inst/storage[3][7]_i_1_n_0            | BTU_Debounce/eqOp                                              |                1 |              8 |         8.00 |
-|  divider_10Hz_clk/clka_BUFG       | Top_inst/LIFO_inst/storage[1][7]_i_1_n_0            | BTU_Debounce/eqOp                                              |                4 |              8 |         2.00 |
-|  divider_10Hz_clk/clka_BUFG       | Top_inst/LIFO_inst/storage[4][7]_i_1_n_0            | BTU_Debounce/eqOp                                              |                1 |              8 |         8.00 |
-|  divider_10Hz_clk/clka_BUFG       | Top_inst/LIFO_inst/storage[2][7]_i_1_n_0            | BTU_Debounce/eqOp                                              |                3 |              8 |         2.67 |
-|  divider_10Hz_clk/clka_BUFG       |                                                     |                                                                |                6 |             11 |         1.83 |
-|  divider_7seg_disp_clk/clk        |                                                     | seg7_sys_inst/number_to_digits_inst/dig0[3]_i_1_n_0            |                8 |             11 |         1.38 |
-|  divider_10Hz_clk/clka_BUFG       | Top_inst/Kontroler_0/E[0]                           | BTU_Debounce/eqOp                                              |                8 |             12 |         1.50 |
-|  main_clk/inst/clk_out1           |                                                     | divider_7seg_disp_clk/geqOp_carry__0_n_2                       |                4 |             14 |         3.50 |
-|  divider_10Hz_clk/clka_BUFG       | Top_inst/Kontroler_0/inst_in_reg_0[0]               | BTU_Debounce/eqOp                                              |                7 |             15 |         2.14 |
-|  divider_10Hz_clk/clka_BUFG       | Top_inst/IO_logic_0/E[0]                            |                                                                |                6 |             16 |         2.67 |
-|  main_clk/inst/clk_out1           |                                                     | divider_100Hz_clk/geqOp_carry__0_n_0                           |                5 |             17 |         3.40 |
-|  main_clk/inst/clk_out1           |                                                     | divider_10Hz_clk/geqOp_carry__1_n_3                            |                5 |             20 |         4.00 |
-| ~divider_10Hz_clk/clka_BUFG       |                                                     | BTU_Debounce/eqOp                                              |               17 |             20 |         1.18 |
-|  main_clk/inst/clk_out1           |                                                     | divider_2Hz_clk/geqOp_carry__1_n_1                             |                6 |             23 |         3.83 |
-|  divider_10Hz_clk/clka_BUFG       |                                                     | BTU_Debounce/eqOp                                              |                9 |             24 |         2.67 |
-|  main_clk/inst/clk_out1           |                                                     | BTD_Debounce/speed_ctrl.count[0]_i_1__0_n_0                    |                8 |             32 |         4.00 |
-|  main_clk/inst/clk_out1           |                                                     | BTC_Debounce/speed_ctrl.count[0]_i_1_n_0                       |                8 |             32 |         4.00 |
-|  main_clk/inst/clk_out1           |                                                     | switch_debounce[5].SW_Debounce/speed_ctrl.count[0]_i_1__6_n_0  |                8 |             32 |         4.00 |
-|  main_clk/inst/clk_out1           |                                                     | BTU_Debounce/speed_ctrl.count_reg[0]_i_1_n_1                   |                8 |             32 |         4.00 |
-|  main_clk/inst/clk_out1           |                                                     | switch_debounce[6].SW_Debounce/speed_ctrl.count[0]_i_1__5_n_0  |                8 |             32 |         4.00 |
-|  main_clk/inst/clk_out1           |                                                     | switch_debounce[1].SW_Debounce/speed_ctrl.count[0]_i_1__10_n_0 |                8 |             32 |         4.00 |
-|  main_clk/inst/clk_out1           |                                                     | switch_debounce[15].SW_Debounce/speed_ctrl.count[0]_i_1__1_n_0 |                8 |             32 |         4.00 |
-|  main_clk/inst/clk_out1           |                                                     | switch_debounce[0].SW_Debounce/speed_ctrl.count[0]_i_1__11_n_0 |                8 |             32 |         4.00 |
-|  main_clk/inst/clk_out1           |                                                     | switch_debounce[7].SW_Debounce/speed_ctrl.count[0]_i_1__4_n_0  |                8 |             32 |         4.00 |
-|  main_clk/inst/clk_out1           |                                                     | switch_debounce[13].SW_Debounce/speed_ctrl.count[0]_i_1__3_n_0 |                8 |             32 |         4.00 |
-|  main_clk/inst/clk_out1           |                                                     | switch_debounce[14].SW_Debounce/speed_ctrl.count[0]_i_1__2_n_0 |                8 |             32 |         4.00 |
-|  main_clk/inst/clk_out1           |                                                     | switch_debounce[3].SW_Debounce/speed_ctrl.count[0]_i_1__8_n_0  |                8 |             32 |         4.00 |
-|  main_clk/inst/clk_out1           |                                                     | switch_debounce[2].SW_Debounce/speed_ctrl.count[0]_i_1__9_n_0  |                8 |             32 |         4.00 |
-|  main_clk/inst/clk_out1           |                                                     | switch_debounce[4].SW_Debounce/speed_ctrl.count[0]_i_1__7_n_0  |                8 |             32 |         4.00 |
-|  main_clk/inst/clk_out1           |                                                     |                                                                |               41 |             82 |         2.00 |
-|  main_clk/inst/clk_out1           |                                                     | BTU_Debounce/eqOp                                              |              266 |            832 |         3.13 |
-+-----------------------------------+-----------------------------------------------------+----------------------------------------------------------------+------------------+----------------+--------------+
++-----------------------------------+--------------------------------------------------------------------+--------------------------------------------------------------------+------------------+----------------+--------------+
+|            Clock Signal           |                            Enable Signal                           |                          Set/Reset Signal                          | Slice Load Count | Bel Load Count | Bels / Slice |
++-----------------------------------+--------------------------------------------------------------------+--------------------------------------------------------------------+------------------+----------------+--------------+
+|  Top_inst/input_logic_0/saved0    |                                                                    | Top_inst/input_logic_0/saved_reg_i_2_n_0                           |                1 |              1 |         1.00 |
+|  Top_inst/input_logic_0/lock1_out |                                                                    | Top_inst/input_logic_0/saved_reg_i_2_n_0                           |                1 |              1 |         1.00 |
+|  divider_7seg_disp_clk/clk        |                                                                    |                                                                    |                2 |              3 |         1.50 |
+|  main_clk/inst/clk_out1           | switch_debounce[15].SW_Debounce/speed_ctrl.count_reg[0]_i_1__0_n_1 | switch_debounce[15].SW_Debounce/index[5]_i_1__2_n_0                |                1 |              3 |         3.00 |
+|  main_clk/inst/clk_out1           | switch_debounce[0].SW_Debounce/speed_ctrl.count_reg[0]_i_1__10_n_1 | switch_debounce[0].SW_Debounce/index[5]_i_1__12_n_0                |                1 |              3 |         3.00 |
+|  main_clk/inst/clk_out1           | switch_debounce[0].SW_Debounce/speed_ctrl.count_reg[0]_i_1__10_n_1 |                                                                    |                1 |              3 |         3.00 |
+|  main_clk/inst/clk_out1           | switch_debounce[7].SW_Debounce/speed_ctrl.count_reg[0]_i_1__3_n_1  | switch_debounce[7].SW_Debounce/index[5]_i_1__5_n_0                 |                1 |              3 |         3.00 |
+|  main_clk/inst/clk_out1           | switch_debounce[6].SW_Debounce/speed_ctrl.count_reg[0]_i_1__4_n_1  | switch_debounce[6].SW_Debounce/index[5]_i_1__6_n_0                 |                1 |              3 |         3.00 |
+|  main_clk/inst/clk_out1           | switch_debounce[6].SW_Debounce/speed_ctrl.count_reg[0]_i_1__4_n_1  |                                                                    |                1 |              3 |         3.00 |
+|  main_clk/inst/clk_out1           | switch_debounce[7].SW_Debounce/speed_ctrl.count_reg[0]_i_1__3_n_1  |                                                                    |                1 |              3 |         3.00 |
+|  main_clk/inst/clk_out1           | BTU_Debounce/speed_ctrl.count_reg[0]_i_1_n_1                       |                                                                    |                1 |              3 |         3.00 |
+|  main_clk/inst/clk_out1           | switch_debounce[5].SW_Debounce/speed_ctrl.count_reg[0]_i_1__5_n_1  | switch_debounce[5].SW_Debounce/index[5]_i_1__7_n_0                 |                1 |              3 |         3.00 |
+|  main_clk/inst/clk_out1           | switch_debounce[5].SW_Debounce/speed_ctrl.count_reg[0]_i_1__5_n_1  |                                                                    |                1 |              3 |         3.00 |
+|  main_clk/inst/clk_out1           | switch_debounce[4].SW_Debounce/speed_ctrl.count_reg[0]_i_1__6_n_1  |                                                                    |                1 |              3 |         3.00 |
+|  main_clk/inst/clk_out1           | switch_debounce[2].SW_Debounce/speed_ctrl.count_reg[0]_i_1__8_n_1  | switch_debounce[2].SW_Debounce/index[5]_i_1__10_n_0                |                1 |              3 |         3.00 |
+|  main_clk/inst/clk_out1           | switch_debounce[2].SW_Debounce/speed_ctrl.count_reg[0]_i_1__8_n_1  |                                                                    |                1 |              3 |         3.00 |
+|  main_clk/inst/clk_out1           | switch_debounce[1].SW_Debounce/speed_ctrl.count_reg[0]_i_1__9_n_1  | switch_debounce[1].SW_Debounce/index[5]_i_1__11_n_0                |                2 |              3 |         1.50 |
+|  main_clk/inst/clk_out1           | switch_debounce[1].SW_Debounce/speed_ctrl.count_reg[0]_i_1__9_n_1  |                                                                    |                1 |              3 |         3.00 |
+|  main_clk/inst/clk_out1           | switch_debounce[4].SW_Debounce/speed_ctrl.count_reg[0]_i_1__6_n_1  | switch_debounce[4].SW_Debounce/index[5]_i_1__8_n_0                 |                1 |              3 |         3.00 |
+|  main_clk/inst/clk_out1           | switch_debounce[3].SW_Debounce/speed_ctrl.count_reg[0]_i_1__7_n_1  | switch_debounce[3].SW_Debounce/index[5]_i_1__9_n_0                 |                1 |              3 |         3.00 |
+|  main_clk/inst/clk_out1           | switch_debounce[3].SW_Debounce/speed_ctrl.count_reg[0]_i_1__7_n_1  |                                                                    |                1 |              3 |         3.00 |
+|  main_clk/inst/clk_out1           | BTU_Debounce/speed_ctrl.count_reg[0]_i_1_n_1                       | BTU_Debounce/index[5]_i_1__1_n_0                                   |                1 |              3 |         3.00 |
+|  main_clk/inst/clk_out1           | switch_debounce[13].SW_Debounce/speed_ctrl.count_reg[0]_i_1__2_n_1 |                                                                    |                1 |              3 |         3.00 |
+|  main_clk/inst/clk_out1           | switch_debounce[13].SW_Debounce/speed_ctrl.count_reg[0]_i_1__2_n_1 | switch_debounce[13].SW_Debounce/index[5]_i_1__4_n_0                |                1 |              3 |         3.00 |
+|  main_clk/inst/clk_out1           | switch_debounce[14].SW_Debounce/speed_ctrl.count_reg[0]_i_1__1_n_1 |                                                                    |                1 |              3 |         3.00 |
+|  main_clk/inst/clk_out1           | switch_debounce[14].SW_Debounce/speed_ctrl.count_reg[0]_i_1__1_n_1 | switch_debounce[14].SW_Debounce/index[5]_i_1__3_n_0                |                1 |              3 |         3.00 |
+|  main_clk/inst/clk_out1           | switch_debounce[15].SW_Debounce/speed_ctrl.count_reg[0]_i_1__0_n_1 |                                                                    |                1 |              3 |         3.00 |
+|  main_clk/inst/clk_out1           | BTC_Debounce/index[6]_i_2_n_0                                      | BTC_Debounce/index[6]_i_1_n_0                                      |                1 |              7 |         7.00 |
+|  main_clk/inst/clk_out1           | BTD_Debounce/index[6]_i_2__0_n_0                                   | BTD_Debounce/index[6]_i_1__0_n_0                                   |                2 |              7 |         3.50 |
+|  divider_10Hz_clk/clka_BUFG       | Top_inst/LIFO_inst/storage[2][7]_i_1_n_0                           | BTU_Debounce/eqOp                                                  |                2 |              8 |         4.00 |
+|  divider_10Hz_clk/clka_BUFG       | Top_inst/LIFO_inst/storage[0][7]_i_1_n_0                           | BTU_Debounce/eqOp                                                  |                1 |              8 |         8.00 |
+|  divider_10Hz_clk/clka_BUFG       | Top_inst/LIFO_inst/storage[3][7]_i_1_n_0                           | BTU_Debounce/eqOp                                                  |                5 |              8 |         1.60 |
+|  divider_10Hz_clk/clka_BUFG       | Top_inst/LIFO_inst/storage[5][7]_i_1_n_0                           | BTU_Debounce/eqOp                                                  |                2 |              8 |         4.00 |
+|  divider_10Hz_clk/clka_BUFG       | Top_inst/LIFO_inst/storage[6][7]_i_1_n_0                           | BTU_Debounce/eqOp                                                  |                4 |              8 |         2.00 |
+|  divider_10Hz_clk/clka_BUFG       | Top_inst/input_logic_0/FSM_onehot_state_reg_n_0_[1]                |                                                                    |                1 |              8 |         8.00 |
+|  divider_10Hz_clk/clka_BUFG       | Top_inst/LIFO_inst/storage[4][7]_i_1_n_0                           | BTU_Debounce/eqOp                                                  |                1 |              8 |         8.00 |
+|  divider_10Hz_clk/clka_BUFG       | Top_inst/Kontroler_0/target_reg[0]_0                               | BTU_Debounce/eqOp                                                  |                2 |              8 |         4.00 |
+|  divider_10Hz_clk/clka_BUFG       | Top_inst/Kontroler_0/count_reg_0[0]                                | BTU_Debounce/eqOp                                                  |                5 |              8 |         1.60 |
+|  divider_10Hz_clk/clka_BUFG       | Top_inst/Kontroler_0/target_reg[1]_4[0]                            | BTU_Debounce/eqOp                                                  |                2 |              8 |         4.00 |
+|  divider_10Hz_clk/clka_BUFG       | Top_inst/Kontroler_0/target_reg[1]_3[0]                            | BTU_Debounce/eqOp                                                  |                5 |              8 |         1.60 |
+|  divider_10Hz_clk/clka_BUFG       | Top_inst/Kontroler_0/target_reg[1]_1[0]                            | BTU_Debounce/eqOp                                                  |                3 |              8 |         2.67 |
+|  Top_inst/input_logic_0/memory__0 |                                                                    |                                                                    |                8 |              8 |         1.00 |
+|  divider_10Hz_clk/clka_BUFG       | Top_inst/LIFO_inst/storage[1][7]_i_1_n_0                           | BTU_Debounce/eqOp                                                  |                2 |              8 |         4.00 |
+|  divider_7seg_disp_clk/clk        |                                                                    | seg7_sys_inst/number_to_digits_inst/dig0[3]_i_1_n_0                |                7 |             10 |         1.43 |
+|  divider_10Hz_clk/clka_BUFG       | Top_inst/Kontroler_0/E[0]                                          | BTU_Debounce/eqOp                                                  |                8 |             12 |         1.50 |
+|  main_clk/inst/clk_out1           |                                                                    | divider_7seg_disp_clk/geqOp_carry__0_n_2                           |                4 |             14 |         3.50 |
+|  divider_10Hz_clk/clka_BUFG       | Top_inst/Kontroler_0/inst_in_reg_0[0]                              | BTU_Debounce/eqOp                                                  |                8 |             14 |         1.75 |
+|  divider_10Hz_clk/clka_BUFG       |                                                                    |                                                                    |                7 |             14 |         2.00 |
+|  divider_10Hz_clk/clka_BUFG       | Top_inst/IO_logic_0/E[0]                                           |                                                                    |                5 |             16 |         3.20 |
+|  main_clk/inst/clk_out1           |                                                                    | divider_100Hz_clk/geqOp_carry__0_n_0                               |                5 |             17 |         3.40 |
+|  main_clk/inst/clk_out1           |                                                                    | divider_10Hz_clk/geqOp_carry__1_n_3                                |                5 |             20 |         4.00 |
+| ~divider_10Hz_clk/clka_BUFG       |                                                                    | BTU_Debounce/eqOp                                                  |               17 |             21 |         1.24 |
+|  main_clk/inst/clk_out1           |                                                                    | divider_2Hz_clk/geqOp_carry__1_n_1                                 |                6 |             23 |         3.83 |
+|  divider_10Hz_clk/clka_BUFG       |                                                                    | BTU_Debounce/eqOp                                                  |                8 |             24 |         3.00 |
+|  main_clk/inst/clk_out1           |                                                                    | BTC_Debounce/speed_ctrl.count[0]_i_1_n_0                           |                8 |             32 |         4.00 |
+|  main_clk/inst/clk_out1           |                                                                    | switch_debounce[6].SW_Debounce/speed_ctrl.count_reg[0]_i_1__4_n_1  |                8 |             32 |         4.00 |
+|  main_clk/inst/clk_out1           |                                                                    | switch_debounce[5].SW_Debounce/speed_ctrl.count_reg[0]_i_1__5_n_1  |                8 |             32 |         4.00 |
+|  main_clk/inst/clk_out1           |                                                                    | switch_debounce[2].SW_Debounce/speed_ctrl.count_reg[0]_i_1__8_n_1  |                8 |             32 |         4.00 |
+|  main_clk/inst/clk_out1           |                                                                    | switch_debounce[1].SW_Debounce/speed_ctrl.count_reg[0]_i_1__9_n_1  |                8 |             32 |         4.00 |
+|  main_clk/inst/clk_out1           |                                                                    | switch_debounce[4].SW_Debounce/speed_ctrl.count_reg[0]_i_1__6_n_1  |                8 |             32 |         4.00 |
+|  main_clk/inst/clk_out1           |                                                                    | switch_debounce[3].SW_Debounce/speed_ctrl.count_reg[0]_i_1__7_n_1  |                8 |             32 |         4.00 |
+|  main_clk/inst/clk_out1           |                                                                    | switch_debounce[7].SW_Debounce/speed_ctrl.count_reg[0]_i_1__3_n_1  |                8 |             32 |         4.00 |
+|  main_clk/inst/clk_out1           |                                                                    | switch_debounce[0].SW_Debounce/speed_ctrl.count_reg[0]_i_1__10_n_1 |                8 |             32 |         4.00 |
+|  main_clk/inst/clk_out1           |                                                                    | switch_debounce[15].SW_Debounce/speed_ctrl.count_reg[0]_i_1__0_n_1 |                8 |             32 |         4.00 |
+|  main_clk/inst/clk_out1           |                                                                    | switch_debounce[13].SW_Debounce/speed_ctrl.count_reg[0]_i_1__2_n_1 |                8 |             32 |         4.00 |
+|  main_clk/inst/clk_out1           |                                                                    | switch_debounce[14].SW_Debounce/speed_ctrl.count_reg[0]_i_1__1_n_1 |                8 |             32 |         4.00 |
+|  main_clk/inst/clk_out1           |                                                                    | BTD_Debounce/speed_ctrl.count[0]_i_1__0_n_0                        |                8 |             32 |         4.00 |
+|  main_clk/inst/clk_out1           |                                                                    | BTU_Debounce/speed_ctrl.count_reg[0]_i_1_n_1                       |                8 |             32 |         4.00 |
+|  main_clk/inst/clk_out1           |                                                                    | BTU_Debounce/eqOp                                                  |               42 |            128 |         3.05 |
+|  main_clk/inst/clk_out1           |                                                                    |                                                                    |              258 |            786 |         3.05 |
++-----------------------------------+--------------------------------------------------------------------+--------------------------------------------------------------------+------------------+----------------+--------------+
 
 

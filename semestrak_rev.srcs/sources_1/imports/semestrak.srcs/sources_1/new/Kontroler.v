@@ -433,7 +433,7 @@ always @(posedge clk) begin
                             end
                         endcase
                     end
-                    8'b00001000:begin //NOTE - JMP + return (8)
+                    8'b00001000:begin //NOTE - FUNC (8)
                         case (step)
                            3'b010:begin        //   (CNT -> ADDR)
                                 count <= 1;
@@ -461,7 +461,20 @@ always @(posedge clk) begin
                                 step_int <= 1;
                                 rst_i_cnt_reg <= 0;
                             end
-                            3'b100:begin            // RAM -> CNT
+                            3'b100:begin            // RAM -> Addr
+                                count <= 0;
+                                target <= 5;
+                                source <= 0;
+                                ALU_cnt <=0;
+                                ALU_carry <=0;
+                                ALU_proc <=0;
+                                stop <= 0;
+                                inst_in <= 0;
+                                input_en <= 0;
+                                step_int <= 1;
+                                rst_i_cnt_reg <= 0;
+                            end
+                            3'b101:begin            // RAM -> CNT
                                 count <= 0;
                                 target <= 4;
                                 source <= 0;
@@ -1640,8 +1653,21 @@ always @(posedge clk) begin
                                 step_int <= 1;
                                 rst_i_cnt_reg <= 0;
                             end
-                            3'b011:begin            // (Z->RAM)
+                            3'b011:begin            // (RAM->addr)
                                 count <= 1;
+                                target <= 5;
+                                source <= 0;
+                                ALU_cnt <=0;
+                                ALU_carry <=0;
+                                ALU_proc <=0;
+                                stop <= 0;
+                                inst_in <= 0;
+                                input_en <= 0;
+                                step_int <= 1;
+                                rst_i_cnt_reg <= 0;
+                            end
+                            3'b100:begin            // (Z->RAM)
+                                count <= 0;
                                 target <= 0;
                                 source <= 1;
                                 ALU_cnt <=0;
@@ -1650,8 +1676,8 @@ always @(posedge clk) begin
                                 stop <= 0;
                                 inst_in <= 0;
                                 input_en <= 0;
-                                step_int <= 0;
-                                rst_i_cnt_reg <= 1;
+                                step_int <= 1;
+                                rst_i_cnt_reg <= 0;
                             end
                             default:begin            //konec instrukce
                                 count <= 0;

@@ -14,7 +14,7 @@ ECHO is off.
     ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source Top_wrap.tcl -notrace
-create_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 430.297 ; gain = 160.305
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 430.078 ; gain = 161.098
 Command: read_checkpoint -auto_incremental -incremental D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/utils_1/imports/synth_1/Top.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/utils_1/imports/synth_1/Top.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -27,16 +27,16 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 9044
+INFO: [Synth 8-7075] Helper process launched with PID 22892
 INFO: [Synth 8-11241] undeclared symbol 'c0', assumed default net type 'wire' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/FullAdder.v:30]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1278.324 ; gain = 412.016
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1276.008 ; gain = 411.809
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'Top_wrap' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:60]
 	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
 	Parameter SAMPLES bound to: 64 - type: integer 
 	Parameter LENGTH_US bound to: 500 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'BTC_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:235]
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'BTC_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:237]
 INFO: [Synth 8-638] synthesizing module 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:48]
 	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
 	Parameter SAMPLES bound to: 64 - type: integer 
@@ -45,76 +45,76 @@ INFO: [Synth 8-256] done synthesizing module 'debounce' (0#1) [D:/projekty/CVUT/
 	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
 	Parameter SAMPLES bound to: 64 - type: integer 
 	Parameter LENGTH_US bound to: 500 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'BTD_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:249]
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'BTD_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:251]
 	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
 	Parameter SAMPLES bound to: 64 - type: integer 
 	Parameter LENGTH_US bound to: 500 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'BTU_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:263]
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'BTU_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:265]
 	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
 	Parameter SAMPLES bound to: 64 - type: integer 
 	Parameter LENGTH_US bound to: 500 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:279]
 	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
 	Parameter SAMPLES bound to: 64 - type: integer 
 	Parameter LENGTH_US bound to: 500 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:279]
 	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
 	Parameter SAMPLES bound to: 64 - type: integer 
 	Parameter LENGTH_US bound to: 500 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:279]
 	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
 	Parameter SAMPLES bound to: 64 - type: integer 
 	Parameter LENGTH_US bound to: 500 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:279]
 	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
 	Parameter SAMPLES bound to: 64 - type: integer 
 	Parameter LENGTH_US bound to: 500 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:279]
 	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
 	Parameter SAMPLES bound to: 64 - type: integer 
 	Parameter LENGTH_US bound to: 500 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:279]
 	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
 	Parameter SAMPLES bound to: 64 - type: integer 
 	Parameter LENGTH_US bound to: 500 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:279]
 	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
 	Parameter SAMPLES bound to: 64 - type: integer 
 	Parameter LENGTH_US bound to: 500 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:279]
 	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
 	Parameter SAMPLES bound to: 64 - type: integer 
 	Parameter LENGTH_US bound to: 500 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:279]
 	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
 	Parameter SAMPLES bound to: 64 - type: integer 
 	Parameter LENGTH_US bound to: 500 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:279]
 	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
 	Parameter SAMPLES bound to: 64 - type: integer 
 	Parameter LENGTH_US bound to: 500 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:279]
 	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
 	Parameter SAMPLES bound to: 64 - type: integer 
 	Parameter LENGTH_US bound to: 500 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:279]
 	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
 	Parameter SAMPLES bound to: 64 - type: integer 
 	Parameter LENGTH_US bound to: 500 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:279]
 	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
 	Parameter SAMPLES bound to: 64 - type: integer 
 	Parameter LENGTH_US bound to: 500 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:279]
 	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
 	Parameter SAMPLES bound to: 64 - type: integer 
 	Parameter LENGTH_US bound to: 500 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:279]
 	Parameter CLK_FREQ_MHZ bound to: 10 - type: integer 
 	Parameter SAMPLES bound to: 64 - type: integer 
 	Parameter LENGTH_US bound to: 500 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:277]
-INFO: [Synth 8-3491] module 'clk_wiz_10MHz' declared at 'd:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/clk_wiz_10MHz/clk_wiz_10MHz.v:68' bound to instance 'main_clk' of component 'clk_wiz_10MHz' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:291]
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/debounce.vhd:36' bound to instance 'SW_Debounce' of component 'debounce' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:279]
+INFO: [Synth 8-3491] module 'clk_wiz_10MHz' declared at 'd:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/clk_wiz_10MHz/clk_wiz_10MHz.v:68' bound to instance 'main_clk' of component 'clk_wiz_10MHz' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:293]
 INFO: [Synth 8-6157] synthesizing module 'clk_wiz_10MHz' [d:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/clk_wiz_10MHz/clk_wiz_10MHz.v:68]
 INFO: [Synth 8-6157] synthesizing module 'clk_wiz_10MHz_clk_wiz' [d:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.gen/sources_1/ip/clk_wiz_10MHz/clk_wiz_10MHz_clk_wiz.v:68]
 INFO: [Synth 8-6157] synthesizing module 'IBUF' [D:/apps/Xilinx/Vivado/2023.1/scripts/rt/data/unisim_comp.v:71768]
@@ -141,7 +141,7 @@ INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_10MHz' (0#1) [d:/projekty
 WARNING: [Synth 8-5640] Port 'rst' is missing in component declaration [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:109]
 	Parameter DIVIDER bound to: 10000 - type: integer 
 	Parameter CNT_W bound to: 14 - type: integer 
-INFO: [Synth 8-3491] module 'divider_custom' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:36' bound to instance 'divider_7seg_disp_clk' of component 'divider_custom' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:297]
+INFO: [Synth 8-3491] module 'divider_custom' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:36' bound to instance 'divider_7seg_disp_clk' of component 'divider_custom' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:299]
 INFO: [Synth 8-638] synthesizing module 'divider_custom' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:46]
 	Parameter DIVIDER bound to: 10000 - type: integer 
 	Parameter CNT_W bound to: 14 - type: integer 
@@ -149,7 +149,7 @@ INFO: [Synth 8-256] done synthesizing module 'divider_custom' (0#1) [D:/projekty
 WARNING: [Synth 8-5640] Port 'rst' is missing in component declaration [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:109]
 	Parameter DIVIDER bound to: 5000000 - type: integer 
 	Parameter CNT_W bound to: 23 - type: integer 
-INFO: [Synth 8-3491] module 'divider_custom' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:36' bound to instance 'divider_2Hz_clk' of component 'divider_custom' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:307]
+INFO: [Synth 8-3491] module 'divider_custom' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:36' bound to instance 'divider_2Hz_clk' of component 'divider_custom' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:309]
 INFO: [Synth 8-638] synthesizing module 'divider_custom__parameterized1' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:46]
 	Parameter DIVIDER bound to: 5000000 - type: integer 
 	Parameter CNT_W bound to: 23 - type: integer 
@@ -157,7 +157,7 @@ INFO: [Synth 8-256] done synthesizing module 'divider_custom__parameterized1' (0
 WARNING: [Synth 8-5640] Port 'rst' is missing in component declaration [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:109]
 	Parameter DIVIDER bound to: 1000000 - type: integer 
 	Parameter CNT_W bound to: 20 - type: integer 
-INFO: [Synth 8-3491] module 'divider_custom' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:36' bound to instance 'divider_10Hz_clk' of component 'divider_custom' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:317]
+INFO: [Synth 8-3491] module 'divider_custom' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:36' bound to instance 'divider_10Hz_clk' of component 'divider_custom' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:319]
 INFO: [Synth 8-638] synthesizing module 'divider_custom__parameterized3' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:46]
 	Parameter DIVIDER bound to: 1000000 - type: integer 
 	Parameter CNT_W bound to: 20 - type: integer 
@@ -165,19 +165,19 @@ INFO: [Synth 8-256] done synthesizing module 'divider_custom__parameterized3' (0
 WARNING: [Synth 8-5640] Port 'rst' is missing in component declaration [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:109]
 	Parameter DIVIDER bound to: 100000 - type: integer 
 	Parameter CNT_W bound to: 17 - type: integer 
-INFO: [Synth 8-3491] module 'divider_custom' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:36' bound to instance 'divider_100Hz_clk' of component 'divider_custom' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:327]
+INFO: [Synth 8-3491] module 'divider_custom' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:36' bound to instance 'divider_100Hz_clk' of component 'divider_custom' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:329]
 INFO: [Synth 8-638] synthesizing module 'divider_custom__parameterized5' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:46]
 	Parameter DIVIDER bound to: 100000 - type: integer 
 	Parameter CNT_W bound to: 17 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'divider_custom__parameterized5' (0#1) [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/imports/semestrak.srcs/sources_1/imports/new/divider.vhd:46]
-INFO: [Synth 8-3491] module 'Top' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/synth_1/.Xil/Vivado-17568-LAPTOP-S2JGJMUA/realtime/Top_stub.vhdl:6' bound to instance 'Top_inst' of component 'Top' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:352]
-INFO: [Synth 8-638] synthesizing module 'Top' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/synth_1/.Xil/Vivado-17568-LAPTOP-S2JGJMUA/realtime/Top_stub.vhdl:29]
-INFO: [Synth 8-3491] module 'seg7_sys' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/synth_1/.Xil/Vivado-17568-LAPTOP-S2JGJMUA/realtime/seg7_sys_stub.vhdl:6' bound to instance 'seg7_sys_inst' of component 'seg7_sys' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:373]
-INFO: [Synth 8-638] synthesizing module 'seg7_sys' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/synth_1/.Xil/Vivado-17568-LAPTOP-S2JGJMUA/realtime/seg7_sys_stub.vhdl:24]
+INFO: [Synth 8-3491] module 'Top' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/synth_1/.Xil/Vivado-21372-LAPTOP-S2JGJMUA/realtime/Top_stub.vhdl:6' bound to instance 'Top_inst' of component 'Top' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:354]
+INFO: [Synth 8-638] synthesizing module 'Top' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/synth_1/.Xil/Vivado-21372-LAPTOP-S2JGJMUA/realtime/Top_stub.vhdl:29]
+INFO: [Synth 8-3491] module 'seg7_sys' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/synth_1/.Xil/Vivado-21372-LAPTOP-S2JGJMUA/realtime/seg7_sys_stub.vhdl:6' bound to instance 'seg7_sys_inst' of component 'seg7_sys' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:375]
+INFO: [Synth 8-638] synthesizing module 'seg7_sys' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/synth_1/.Xil/Vivado-21372-LAPTOP-S2JGJMUA/realtime/seg7_sys_stub.vhdl:24]
 WARNING: [Synth 8-5640] Port 'rsta_busy' is missing in component declaration [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:138]
 WARNING: [Synth 8-5640] Port 'rstb_busy' is missing in component declaration [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:138]
-INFO: [Synth 8-3491] module 'blk_mem_RAM' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/synth_1/.Xil/Vivado-17568-LAPTOP-S2JGJMUA/realtime/blk_mem_RAM_stub.vhdl:6' bound to instance 'RAM' of component 'blk_mem_RAM' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:394]
-INFO: [Synth 8-638] synthesizing module 'blk_mem_RAM' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/synth_1/.Xil/Vivado-17568-LAPTOP-S2JGJMUA/realtime/blk_mem_RAM_stub.vhdl:26]
+INFO: [Synth 8-3491] module 'blk_mem_RAM' declared at 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/synth_1/.Xil/Vivado-21372-LAPTOP-S2JGJMUA/realtime/blk_mem_RAM_stub.vhdl:6' bound to instance 'RAM' of component 'blk_mem_RAM' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:396]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_RAM' [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/synth_1/.Xil/Vivado-21372-LAPTOP-S2JGJMUA/realtime/blk_mem_RAM_stub.vhdl:26]
 INFO: [Synth 8-256] done synthesizing module 'Top_wrap' (0#1) [D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.srcs/sources_1/new/Top_wrap.vhd:60]
 WARNING: [Synth 8-3917] design Top_wrap has port JB[3] driven by constant 0
 WARNING: [Synth 8-3917] design Top_wrap has port JB[2] driven by constant 0
@@ -186,20 +186,20 @@ WARNING: [Synth 8-3917] design Top_wrap has port JB[0] driven by constant 0
 WARNING: [Synth 8-7129] Port BTL in module Top_wrap is either unconnected or has no load
 WARNING: [Synth 8-7129] Port BTR in module Top_wrap is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1373.406 ; gain = 507.098
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1371.547 ; gain = 507.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1373.406 ; gain = 507.098
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1371.547 ; gain = 507.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1373.406 ; gain = 507.098
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1371.547 ; gain = 507.348
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.187 . Memory (MB): peak = 1375.883 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.058 . Memory (MB): peak = 1371.547 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -228,22 +228,22 @@ Resolution: To avoid this warning, move constraints listed in [.Xil/Top_wrap_pro
 INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1480.348 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1471.598 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 1480.348 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1471.598 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 1480.348 ; gain = 614.039
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1471.598 ; gain = 607.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 1480.348 ; gain = 614.039
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1471.598 ; gain = 607.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -252,10 +252,10 @@ Applied set_property KEEP_HIERARCHY = SOFT for main_clk/inst. (constraint file  
 Applied set_property KEEP_HIERARCHY = SOFT for main_clk. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for RAM. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 1480.348 ; gain = 614.039
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1471.598 ; gain = 607.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:42 ; elapsed = 00:00:46 . Memory (MB): peak = 1480.348 ; gain = 614.039
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1471.598 ; gain = 607.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -294,25 +294,25 @@ WARNING: [Synth 8-3917] design Top_wrap has port JB[0] driven by constant 0
 WARNING: [Synth 8-7129] Port BTL in module Top_wrap is either unconnected or has no load
 WARNING: [Synth 8-7129] Port BTR in module Top_wrap is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:55 ; elapsed = 00:01:00 . Memory (MB): peak = 1480.348 ; gain = 614.039
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1471.598 ; gain = 607.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:09 ; elapsed = 00:01:15 . Memory (MB): peak = 1480.348 ; gain = 614.039
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1471.598 ; gain = 607.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:10 ; elapsed = 00:01:16 . Memory (MB): peak = 1480.348 ; gain = 614.039
+Finished Timing Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1471.598 ; gain = 607.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:13 ; elapsed = 00:01:19 . Memory (MB): peak = 1480.348 ; gain = 614.039
+Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 1471.598 ; gain = 607.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -330,37 +330,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:21 ; elapsed = 00:01:27 . Memory (MB): peak = 1480.348 ; gain = 614.039
+Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 1471.598 ; gain = 607.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:21 ; elapsed = 00:01:27 . Memory (MB): peak = 1480.348 ; gain = 614.039
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 1471.598 ; gain = 607.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:22 ; elapsed = 00:01:28 . Memory (MB): peak = 1480.348 ; gain = 614.039
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 1471.598 ; gain = 607.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:22 ; elapsed = 00:01:28 . Memory (MB): peak = 1480.348 ; gain = 614.039
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 1471.598 ; gain = 607.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:22 ; elapsed = 00:01:28 . Memory (MB): peak = 1480.348 ; gain = 614.039
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1471.598 ; gain = 607.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:22 ; elapsed = 00:01:28 . Memory (MB): peak = 1480.348 ; gain = 614.039
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1471.598 ; gain = 607.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -384,11 +384,11 @@ Report Cell Usage:
 |3     |seg7_sys_bbox    |     1|
 |4     |BUFG             |     2|
 |5     |CARRY4           |   282|
-|6     |LUT1             |    31|
-|7     |LUT2             |   527|
-|8     |LUT3             |   376|
-|9     |LUT4             |   209|
-|10    |LUT5             |    16|
+|6     |LUT1             |    20|
+|7     |LUT2             |   505|
+|8     |LUT3             |   354|
+|9     |LUT4             |   198|
+|10    |LUT5             |    38|
 |11    |LUT6             |   925|
 |12    |MMCME2_ADV       |     1|
 |13    |FDRE             |  1534|
@@ -396,26 +396,26 @@ Report Cell Usage:
 |15    |OBUF             |    43|
 +------+-----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:22 ; elapsed = 00:01:28 . Memory (MB): peak = 1480.348 ; gain = 614.039
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1471.598 ; gain = 607.398
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:56 ; elapsed = 00:01:19 . Memory (MB): peak = 1480.348 ; gain = 507.098
-Synthesis Optimization Complete : Time (s): cpu = 00:01:22 ; elapsed = 00:01:28 . Memory (MB): peak = 1480.348 ; gain = 614.039
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:39 . Memory (MB): peak = 1471.598 ; gain = 507.348
+Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1471.598 ; gain = 607.398
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.127 . Memory (MB): peak = 1480.348 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.066 . Memory (MB): peak = 1471.598 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 283 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1480.348 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1471.598 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 55a78833
+Synth Design complete | Checksum: 4cbf7292
 INFO: [Common 17-83] Releasing license: Synthesis
 80 Infos, 19 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:35 ; elapsed = 00:01:47 . Memory (MB): peak = 1480.348 ; gain = 1015.688
+synth_design: Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 1471.598 ; gain = 1007.281
 INFO: [Common 17-1381] The checkpoint 'D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/synth_1/Top_wrap.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Top_wrap_utilization_synth.rpt -pb Top_wrap_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Dec 13 22:47:40 2023...
+INFO: [Common 17-206] Exiting Vivado at Wed Dec 20 16:07:05 2023...

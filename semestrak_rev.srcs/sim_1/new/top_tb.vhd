@@ -66,8 +66,14 @@ architecture bench of Top_tb is
   signal RGB1_G : std_logic;
   signal RGB1_B : std_logic;
 
+  type ValueArray is array (0 to 2) of std_logic_vector(7 downto 0);
+  signal values1 : ValueArray := ("00000000", "00000010", "00000011");
+  signal values2 : ValueArray := ("10000001", "00000111", "00000011");
+  signal values3 : ValueArray := ("00000001", "00000000", "11111111");
+  
+  signal values : ValueArray;
 begin
-
+  
   Top_wrap_inst : entity work.Top_wrap
   port map (
     clk_100MHz => clk_100MHz,
@@ -100,23 +106,34 @@ begin
   BTL <= '0';
   BTR <= '0';
   
-  BTD_test : process
+  values <= values3;
+  BTD_test : process( BTC)
+    variable i : integer := 0;
+    variable t : integer := 0;
+    variable x : integer := 0;
   begin
-    BTD <= '0';
-    SWs(7 downto 0) <= "00000000";
-    wait for 10 * clk_period;
-    BTD <= '1';
-    wait for 4 * clk_period;
-    BTD <= '0';
-    SWs(7 downto 0) <= "00000000";
-    wait for 10 * clk_period;
-    BTD <= '1';
-    wait for 4 * clk_period;
-    BTD <= '0';
-    SWs(7 downto 0) <= "00000001";
-    wait for 10 * clk_period;
-    BTD <= '1';
-    wait for 6 * clk_period;
+     BTD <= '0';
+  if (RGB1_B = '1') then
+     if t = 0 then
+        SWs(7 downto 0) <= values(i);
+--        values(i) <= values(i)(6 downto 0) & '1';
+        if i < values'length-1 then
+            i := i + 1;
+        else
+            i := 0;
+        end if;
+        BTD <= '1';
+        t := 1;
+        x := 0;
+     else
+        if x < 5000 then
+            BTD <= '1';
+            x := x + 1;
+        end if;
+     end if;
+   else
+    t := 0;
+   end if;
   end process;
 
 

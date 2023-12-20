@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Fri Dec  8 10:43:11 2023
+| Date         : Thu Dec 14 11:30:49 2023
 | Host         : LAPTOP-S2JGJMUA running 64-bit major release  (build 9200)
 | Command      : report_utilization -file seg7_sys_utilization_synth.rpt -pb seg7_sys_utilization_synth.pb
 | Design       : seg7_sys
@@ -57,9 +57,9 @@ Warning! LUT value is adjusted to account for LUT combining.
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 3     |          Yes |           - |        Reset |
+| 0     |          Yes |           - |        Reset |
 | 4     |          Yes |         Set |            - |
-| 7     |          Yes |       Reset |            - |
+| 10    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -150,14 +150,13 @@ Warning! LUT value is adjusted to account for LUT combining.
 +----------+------+---------------------+
 | LUT6     |   35 |                 LUT |
 | LUT3     |   10 |                 LUT |
+| FDRE     |   10 |        Flop & Latch |
 | LUT5     |    9 |                 LUT |
-| FDRE     |    7 |        Flop & Latch |
 | LUT2     |    4 |                 LUT |
 | FDSE     |    4 |        Flop & Latch |
 | MUXF7    |    3 |               MuxFx |
-| FDCE     |    3 |        Flop & Latch |
-| LUT1     |    2 |                 LUT |
-| LUT4     |    1 |                 LUT |
+| LUT4     |    2 |                 LUT |
+| LUT1     |    1 |                 LUT |
 +----------+------+---------------------+
 
 

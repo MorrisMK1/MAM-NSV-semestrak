@@ -37,8 +37,8 @@ module Register_c#(
         storage <= 0;
     end
     
-    always @(posedge clk or posedge reset) begin
-        if (reset) begin
+    always @(posedge clk) begin
+        if (reset == 1) begin
             storage <= 0;
         end
         else if (in_en == 1) begin

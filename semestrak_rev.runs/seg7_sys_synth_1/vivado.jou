@@ -3,8 +3,8 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Fri Dec  8 10:42:11 2023
-# Process ID: 2004
+# Start of session at: Thu Dec 14 11:29:52 2023
+# Process ID: 17664
 # Current directory: D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/seg7_sys_synth_1
 # Command line: vivado.exe -log seg7_sys.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source seg7_sys.tcl
 # Log file: D:/projekty/CVUT/Vivado2023.1/semestrak_rev/semestrak_rev.runs/seg7_sys_synth_1/seg7_sys.vds
