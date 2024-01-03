@@ -32,7 +32,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity input_logic is
-    Port ( clk : in STD_LOGIC;
+    Port ( clk : in STD_LOGIC; --! test
            enable : in STD_LOGIC;
            confirm : in std_logic ;
            inputs : in STD_LOGIC_VECTOR (7 downto 0);
@@ -46,7 +46,7 @@ architecture Behavioral of input_logic is
     signal state : STD_LOGIC_VECTOR (1 downto 0)   := "00";
     signal saved : std_logic := '0';
 begin
-output_f : process (clk)
+output_f : process (clk) 
 begin
     if rising_edge(clk) then
         case(state) is
